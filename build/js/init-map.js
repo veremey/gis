@@ -15,7 +15,7 @@ $(document).ready(function() {
 				// scroll: false
 			});
 			myIcon = DG.icon({
-				iconUrl: 'img/icons/icon-marker.png',
+				iconUrl: 'img/icon-marker.png',
 				iconSize: [55, 55]
 			});
 			DG.marker([60.91517658549869, 30.323893725872043],{
@@ -46,7 +46,7 @@ $(document).ready(function() {
 				// scrollWheelZoom: false
 			});
 			myIcon = DG.icon({
-				iconUrl: 'img/icons/marker.png',
+				iconUrl: 'img/marker.png',
 				iconSize: [89, 99],
 				iconAnchor: [41, 75]
 			});
@@ -75,7 +75,7 @@ $(document).ready(function() {
 			});
 
 			myIcon = DG.icon({
-				iconUrl: 'img/icons/icon-marker.png',
+				iconUrl: 'img/icon-marker.png',
 				iconSize: [55, 55]
 			});
 			hereIAm= DG.icon({
@@ -206,7 +206,7 @@ $(document).ready(function() {
 				// boxZoom: false
 			});
 			myIcon = DG.icon({
-				iconUrl: 'img/icons/icon-marker.png',
+				iconUrl: 'img/icon-marker.png',
 				iconSize: [55, 55]
 			});
 			hereIAm= DG.icon({
@@ -263,7 +263,7 @@ $(document).ready(function() {
 				// boxZoom: false
 			});
 			myIcon = DG.icon({
-				iconUrl: 'img/icons/icon-famouse.png',
+				iconUrl: 'img/icon-famouse.png',
 				iconSize: [56, 54]
 			});
 			hereIAm= DG.icon({
@@ -321,7 +321,7 @@ $(document).ready(function() {
 				// boxZoom: false
 			});
 			myIcon = DG.icon({
-				iconUrl: 'img/icons/icon-marker.png',
+				iconUrl: 'img/icon-marker.png',
 				iconSize: [55, 55]
 			});
 			hereIAm= DG.icon({
