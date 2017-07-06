@@ -1,0 +1,233 @@
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	transform: rotateY(90deg)
+	transform-origin: top center
+	will-change: all
+	&.is_active
+		display: block
+		transform: rotateY(0deg)
+		z-index: 1000
+	&__window
+		position: absolute
+		top: 50%
+		left: 50%
+		backface-visibility: hidden
+		transform: translateZ(0) translateX(-50%) translateY(-50%) scale(1.0, 1.0)
+		padding: 18px 40px 20px
+		background-color: #FFF
+		border-radius: 8px
+		// box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+		border-radius: 8px
+		// opacity: 0
+		z-index: 1200
+		-webkit-font-smoothing: antialiased
+		+tr(.4s)
+		+r(800)
+			border-radius: 0
+			padding: 20px
+		&.is_active
+			// opacity: 1
+			z-index: 2000
+		&.sdw
+			border-radius: 8px
+	&__overlay
+		+coverdiv
+		background-color: rgba(0, 0, 0, .6)
+	.icon-close
+		position: absolute
+		top: 20px  //  p-skidochnye-karty.html
+		right: 20px
+	.addNewCard
+		width: 100%
+	.btn__small
+		margin-top: 20px
+	.expectancy__title
+		overflow: visible
+
+.search__wrap
+	display: flex
+	width: 100%
+	position: relative
+	z-index: 20
+	background-color: #FFF
+	border-radius: 50px
+	overflow: hidden
+	padding-right: 26px
+	.header__search
+		padding: 0
+	.mainForm
+		display: flex
+		height: 48px
+
+.shemaPopup
+	max-width: 780px
+	width: calc(100% - 40px)
+	padding: 28px 40px 40px
+	+r(650)
+		width: calc(100% - 20px)
+	&__content
+		display: flex
+		align-content: center
+		flex-direction: row-reverse
+		justify-content: space-between
+		+r(800)
+			display: block
+	.order__table
+		width: 50%
+		+r(800)
+			width: 100%
+			max-height: 110px
+			overflow: auto
+		&_row
+			font-size: 0
+			+r(500)
+				margin-bottom: 10px
+		&_cell
+			display: inline-block
+			width: calc(100% - 140px)
+			vertical-align: top
+			+r(500)
+				width: 100%
+			&:first-child
+				width: 140px
+				+r(500)
+					width: 100%
+
+	.order__desc
+		white-space: nowrap
+		+r(500)
+			padding: 0
+	#mapmini
+		height: auto
+		min-height: 250px
+		+r(800)
+			margin-top: 20px
+			margin-right: 0
+			width: 100%
+			height: 250px
+
+.youSure
+	position: fixed
+	top: 50%
+	left: 50%
+	backface-visibility: hidden
+	transform: translateZ(0) translateX(-50%) translateY(-50%) scale(1.0, 1.0)
+	padding: 35px 40px 40px
+	width: 96%
+	max-width: 380px
+	background-color: #FFF
+	border-radius: 8px
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+	z-index: 1202
+	&__cancel
+		font-size: 13px
+		color: $light-gray
+		text-transform: uppercase
+		border-bottom: 1px dotted $light-gray
+		margin-left: 20px
+		+ub
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	.btn__small
+		margin-top: 10px
+
+.addCard
+	width: 96%
+	max-width: 440px
+	&.sdw
+		+r(800)
+			border-radius: 8px !important
+
+.callBack
+	width: 96%
+	max-width: 440px
+	&.is_active
+		display: block
+	&__form
+		text-align: center
+	.btn__small
+		outline: none
+		border: none
+		width: 70%
+	.order__input
+		padding-top: 0!important
+
+.mapPopup,
+.adressMapPopupFlat
+	width: 96%
+	max-width: 460px
+	text-align: left
+	.section__desc
+		font-size: 13px
+		margin-top: 20px
+	.youSure__content
+		text-align: left
+
+.apteki
+	width: 96%
+	max-width: 550px
+	text-align: left
+	&__form
+		margin-bottom: 15px
+	&__list
+		border-top: 1px solid $border
+		max-height: 390px
+		overflow: hidden
+	&__item
+		display: flex
+		justify-content: space-between
+		padding: 10px 0
+		margin-right: 30px
+		border-bottom: 1px solid $border
+	&__text
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex: 0 1 170px
+	&__link
+		font-size: 13px
+		color: $light-gray
+		border-bottom: 1px solid $light-gray
+		+rr
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	&__count
+		display: inline-block
+		width: 25px
+		font-size: 15px
+		color: $gray
+		+rl
+	&__btn
+		display: inline-block
+		height: 40px
+		text-align: center
+		padding: 8px 24px
+		border-radius: 40px
+		border: 2px solid $green
+		text-transform: uppercase
+		font-size: 13px
+		color: $green
+		+rr
+		+tr(.4s)
+		&:hover
+			color: #fff
+			background-color: $green
+	.assortment__content
+		max-width: 260px
+		justify-content: flex-start
+	.pharmacy__name
+		display: inline-block
+		// flex: 0 1 50%
+	.pharmacy__link
+		color: $light-gray
+		border-color: $n
+	.partner__pic
+		width: 90px
+		height: 60px
+		margin-right: 15px

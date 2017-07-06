@@ -1,0 +1,98 @@
+---
+title: Index Page
+---
+extends layouts/_layout
+
+extends _layout
+
+block headScript
+	script(src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full")
+
+block content
+	-var assortment = [ {item: {link: "Акцент Здоровья", distance: "450 м", time: "9:00 - 22:00", price: "1 420", class: false, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}}, {item: {link: "точка Фарм", distance: "500 м", time: "8:00 - 21:00", price: "1 380", class: false, adress: "г. Спб, пр-кт Просвещения, д.200"}}, {item: {link: "Народная точка", distance: "550 м", time: "9:00 - 22:00", price: "1 113", class: true, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}},{item: {link: "Акцент Здоровья", distance: "450 м", time: "9:00 - 22:00", price: "1 420", class: false, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}}, {item: {link: "точка Фарм", distance: "500 м", time: "8:00 - 21:00", price: "1 380", class: false, adress: "г. Спб, пр-кт Просвещения, д.200"}}, {item: {link: "Народная точка", distance: "550 м", time: "9:00 - 22:00", price: "1 113", class: true, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}}];
+
+	.out
+		//- include layout/header-inner.pug
+		.layout
+			section.section.mod_last
+				h3.section__title Оформление заказа
+					small В наличии в 127 точках
+
+				.retrieval.sdw
+					form(action="/", method="POST", autocomplete="off").retrieval__form
+						h5.title__popular Покупатель:
+						.retrieval__form_wrap
+							fieldset.retrieval__fieldset
+								input(type="text", name="name").retrieval__input
+								label(for="name").retrieval__label Имя
+							fieldset.retrieval__fieldset
+								input(type="tel", name="tel").retrieval__input.tel_inp
+								label(for="tel").retrieval__label Телефон
+							fieldset.retrieval__fieldset
+								input(type="email", name="email").retrieval__input
+								label(for="email").retrieval__label E-mail
+
+					.retrieval__content
+						//- h5.title__popular Ваш&nbsp;
+						//- 	a(href="basket.html") список товаров
+						//- 	|   есть в 127 точках Санкт-Петербурга
+						p.retrieval__desc Ваш адрес:  &nbsp;
+							b.retrieval__bold   Санкт-Петербург, ул. Граничная, д.21, кв.62
+							a(href="e_apteki_nothing_found.html", data-ppp="js-adressMapPopup").retrieval__link.js-ppp Изменить
+						<br>
+
+
+					div
+
+						h2.title__popular покликать для примера
+						<br>
+						a(href="https://twitter.com/").pharmacy__getSelf.js-detectUserData
+							span заберу отсюда
+						<br>
+						<br>
+						label.check.mod_heart
+							input(type="checkbox", name="")
+							span(data-toggle-text="Убрать из моих точк", data-start-text="В мои точки")  В мои точки
+
+						<br>
+						<br>
+						a(href="#", data-ppp="js-shemaProezda").popapPharmacy__link.js-ppp Попап который проблемно вызвать с карты
+						<br>
+						<br>
+				#mapPharmacy.mod_offsetTop.mod_last
+
+				#popapPharmacy01
+					p.distance 1 200 м.
+					a(href="#").popapPharmacy__title точка Фарм
+					p.popapPharmacy__desc г. Спб, пр-кт Просвещения, д.200
+						span.pharmacy__metro
+							i.icon-metro-green
+							| Достоевского
+					p.popapPharmacy__price 1 000 руб.
+					p.popapPharmacy__strong Вы сможете получить заказ сразу <br> после оформления
+					.popapPharmacy__btns
+						a(href="https://twitter.com/").pharmacy__getSelf.js-detectUserData
+							span заберу отсюда
+					a(href="#", data-ppp="js-shemaProezda").popapPharmacy__link.js-ppp Попап который проблемно вызвать с карты
+					.popapPharmacy__check
+						label.check.mod_heart
+							input(type="checkbox", name="")
+							span(data-toggle-text="Убрать из моих точк", data-start-text="В мои точки")  В мои точки
+
+		.popup
+			.popup__overlay
+			.popup__window.shemaPopup.js-shemaProezda
+				a(href="#", data-close="popup").btn__close.js-close
+				h4.title__popular Схема проезда и режим работы
+				.shemaPopup__content
+					ul.order__table
+						- var order = [ {first: "Сеть:", strong: "Здоровьюшко"}, {first: "Время работы:", strong: "09:00 — 21:00"}, {first: "Телефон:", strong: "8 911 937 60 63"}, {first: "Адрес:", strong: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. <br> №12,13,15-23 (аптека готовых лек. форм)"}, {first: "Метро:", strong: "<i class='icon-metro-green'></i> Старая Деревня"}];
+
+						each it in order
+							li.order__table_row
+								.order__table_cell
+									p.order__desc #{it.first}
+								.order__table_cell
+									p.order__desc
+										strong.order__strong !{it.strong}
+					#mapmini

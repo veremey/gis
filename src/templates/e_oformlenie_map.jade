@@ -1,0 +1,83 @@
+extends _layout
+
+block headScript
+	script(src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full")
+
+block content
+	-var assortment = [ {item: {link: "Акцент Здоровья", distance: "450 м", time: "9:00 - 22:00", price: "1 420", class: false, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}}, {item: {link: "Аптека Фарм", distance: "500 м", time: "8:00 - 21:00", price: "1 380", class: false, adress: "г. Спб, пр-кт Просвещения, д.200"}}, {item: {link: "Народная аптека", distance: "550 м", time: "9:00 - 22:00", price: "1 113", class: true, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}},{item: {link: "Акцент Здоровья", distance: "450 м", time: "9:00 - 22:00", price: "1 420", class: false, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}}, {item: {link: "Аптека Фарм", distance: "500 м", time: "8:00 - 21:00", price: "1 380", class: false, adress: "г. Спб, пр-кт Просвещения, д.200"}}, {item: {link: "Народная аптека", distance: "550 м", time: "9:00 - 22:00", price: "1 113", class: true, adress: "г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23"}}];
+
+	.out
+		//- include layout/header-inner.pug
+		.layout
+			section.section.mod_last
+				h3.section__title Оформление заказа
+					small В наличии в 127 аптеках
+
+				//- include module/retrieval.pug
+				.toggler.toggler-01.is_active(style="display: block")
+					#mapPharmacy.mod_offsetTop.mod_last
+
+					#popapPharmacy01
+						p.distance 1 200 м.
+						a(href="e_apteka_opisanie.html").popapPharmacy__title Аптека Фарм
+						p.popapPharmacy__desc г. Спб, пр-кт Просвещения, д.200
+							span.pharmacy__metro
+								i.icon-metro-green
+								| Достоевского
+						p.popapPharmacy__price 1 000 руб.
+						p.popapPharmacy__strong Вы сможете получить заказ сразу <br> после оформления
+						.popapPharmacy__btns
+							a(href="#").pharmacy__getSelf.js-detectUserData
+								span заберу отсюда
+						a(href="#", data-ppp="js-shemaProezda").popapPharmacy__link.js-ppp Схема проезда и режим работы
+						.popapPharmacy__check
+							label.check.mod_heart
+								input(type="checkbox", name="")
+								span(data-toggle-text="Убрать из моих аптек", data-start-text="В мои аптеки")  В мои аптеки
+
+				.toggler.toggler-02
+					.assortment.sdw.mod_offsetTop.pharmacy
+						.assortment__header.mod_notch
+							.assortment__content
+								p.pharmacy__name Наименование  /  Адрес
+								p.pharmacy__distance
+									span.pharmacy__distance_title Расстояние
+								p.pharmacy__time Режим работы
+								p.pharmacy__price
+									span.pharmacy__price_title Цена
+
+						each tabl in assortment
+							.assortment__box
+								.assortment__item
+									.assortment__content
+										.assortment__wrap
+											.assortment__content_top
+												.pharmacy__name
+													a(href="E_oformlenie_step_2.html").pharmacy__link #{tabl.item.link}
+												.pharmacy__distance
+													span.pharmacy__desc #{tabl.item.distance}
+												.pharmacy__time
+													span.pharmacy__desc #{tabl.item.time}
+												.pharmacy__price
+													span.pharmacy__price_desc #{tabl.item.price}
+											.assortment__content_bottom
+												p.pharmacy__adress #{tabl.item.adress}
+												p.pharmacy__adress
+													span.pharmacy__metro
+														i.icon-metro-green
+														| Достоевского
+									.pharmacy__btns
+										a(href="E_zakaz_oformlen.html").pharmacy__getSelf.js-detectUserData
+											span заберу отсюда
+
+								//- include module/expectancy.pug
+
+					.more
+						a(href="#").more__link Показать остальные 117 аптек
+
+		//- include layout/footer.pug
+		//- .popup
+		//- 	.popup__overlay
+		//- 	include layout/mainSearchPopup.pug
+		//- 	include module/adressMapPopup.pug
+		//- 	include module/shemaPopup.pug

@@ -1,0 +1,4792 @@
+.bread
+	font-size: 0
+	margin-bottom: 15px
+	+r(800)
+		padding-left: 20px
+	&__list
+		position: relative
+		display: inline-block
+		padding-right: 10px
+		margin-right: 10px
+		font-size: 12px
+		color: $light-gray
+		+rr
+		&:after
+			content: '\002F'
+			position: absolute
+			top: 0
+			right: -5px
+			font-size: 14px
+			color: $gray
+		&:last-child
+			&:after
+				content: none
+	&__link
+		font-size: 12px
+		color: $light-gray
+		display: inline-block
+		line-height: 1.1
+		border-bottom: 1px solid $light-gray
+		+rr
+		+tr(.4s)
+		&:hover
+			border-color: $n
+// --------------------------------------
+.promotion
+	+clr
+	&__win
+		position: relative
+		width: 230px
+		float: left
+		background-color: #ffffed
+		+r(600)
+			width: 100%
+		&.day_win
+			&:after
+				content: ''
+				position: absolute
+				top: -4px
+				left: -4px
+				+s(icon-day-win)
+	&__slider
+		position: relative
+		width: calc(100% - 250px)
+		float: right
+		+r(600)
+			width: 100%
+			margin-top: 20px
+
+.prom
+	&__item
+		background-color: #FFF
+	&__prev,
+	&__next
+		position: absolute
+		top: 42%
+		+hide-text
+		height: 30px
+		width: 30px
+		border-radius: 30px
+		border: 2px solid #edecea
+		background: #fff
+		left: -15px
+		z-index: 1
+		+tr(.4s)
+		+r(800)
+			left: 0
+		&:hover
+			// opacity: .8
+			border-color: $light-gray
+		&:focus
+			outline: none
+		&.slick-disabled
+			opacity: 0.2
+		&:before
+			content: ""
+			+vcenter
+			+s(slide-prev)
+	&__next
+		right: -15px
+		left: auto
+		+r(800)
+			left: auto
+			right: 0
+		&:before
+			content: ""
+			display: inline-block
+			+s(slide-next)
+	.slick-list
+		border-radius: 8px
+// --------------------------------------
+.assortment
+	position: relative
+	border-radius: 8px
+	overflow: hidden
+	background-color: #FFF
+	padding-bottom: 20px
+	&__header
+		border-bottom: 1px solid #efefef
+		padding-top: 10px
+		background-color: #FFF
+		&.mod_notch
+			padding: 10px 38px 8px
+			+r(470)
+				display: none // sort http://joxi.ru/823zjJ5IJMz7gm
+		&.mod_correct
+			padding: 20px 0
+		&.mod_flex
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			padding: 0 0 20px
+			.retrieval__check
+				margin: 0 20px 0 0
+				+r(650)
+					margin: 10px 0 0
+			.retrieval__showing
+				margin-top: 0
+		&_title
+			display: inline-block
+			font-size: 13px
+			color: $gray
+			+rl
+			+r(650)
+				display: none //e-tov-e-opisanie.html
+		&_link
+			display: inline-block
+			margin: 0 16px
+			color: $light-gray
+			border-bottom: 1px dotted $light-gray
+			+rl
+			+tr(.4s)
+			+r(400)
+				margin: 0 15px
+			&:hover
+				border-color: $n
+			&.is_active
+				position: relative
+				border-bottom-color: $n
+				&:after
+					content: ''
+					position: absolute
+					right: -20px
+					top: 50%
+					+try(-50%)
+					+arr(8, 5, $light-gray, b)
+					+r(400)
+						right: -15px
+
+		.selectors
+			padding-bottom: 18px
+			margin-top: 10px
+			margin-bottom: 5px
+			// border-bottom: 1px solid #eeeeed
+		.selector
+			margin-top: 0
+	// &__box
+	&__item
+		display: flex
+		align-items: stretch
+		justify-content: space-between
+
+		padding: 23px 40px
+		background-color: #FFF
+		border-bottom: 1px solid #efefef
+		+tr(.4s)
+		// &:last-of-type // dont do that /p-one-apteka-accii.html
+		// 	border: none
+		// 	padding-bottom: 0 !important
+		// &:hover
+		// 	background-color: #fdfdfd
+		+r(800)
+			align-items: stretch
+			padding: 20px
+		// &.is_active
+		// 	border-bottom-color: $n
+		&:last-of-type
+			//padding-bottom: 0 !important // e_apteka_search_in_progress.html
+			border: 0
+		&.mod-short
+			padding: 23px 38px 23px 0
+			+r(650)
+				flex-direction: column
+				padding: 23px 0
+			.assortment__content
+				align-items: center
+				+r(800)
+					width: calc(100% - 220px)
+				+r(650)
+					width: 100%
+			.pharmacy__name
+				+r(650)
+					text-align: center
+					white-space: normal
+			[discnt]
+				+r(650)
+					display: inline-block
+					margin-top: 30px
+					&:after
+						top: -30px
+						left: 50%
+						+trx(-50%)
+			.assortment__talon
+				height: 90px
+				border: 1px solid $body
+				+r(650)
+					width: 150px // add for e_accii_seti.html
+					max-width: 150px // add for e_accii_seti.html
+					height: 150px // add for e_accii_seti.html
+					margin: 0 auto 10px // add for e_accii_seti.html
+				img
+					+vcenter
+					max-width: 76%
+					max-height: 80%
+			.pharmacy__price
+				flex: 0 1 210px
+				display: flex
+				align-items: center
+				justify-content: space-between
+				+r(650)
+					margin-top: 10px
+					justify-content: space-around
+					flex: 0 1 auto
+					flex-wrap: wrap
+		&.is_removed
+			.pharmacy__btns
+				display: none
+			.assortment__talon,
+			.assortment__talon + .assortment__link
+				display: none
+			.assortment__reestablish
+				+r(650)
+					margin-bottom: 10px
+
+	&__content
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 66%
+		+r(800)
+			width: calc(100% - 160px)
+			flex-wrap: wrap
+			align-items: stretch
+		&_top
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin-bottom: 10px
+			+r(470)
+				flex-wrap: wrap//E_oformlenie_step_2.htm
+		&.mod_partner
+			width: 54%
+			+r(900)
+				width: calc(100% - 400px)
+			.assortment__wrap
+				display: block
+			.assortment__content_bottom
+				margin-top: 10px
+	&__shield
+		@extend .assortment__content
+		width: 50%
+		.assortment__talon
+			border: none !important
+			width: 66px
+			height: 66px
+			img
+				+vcenter
+				max-width: 76%
+				max-height: 80%
+				width: auto
+				height: auto
+		.assortment__order
+			+r(450)
+				width: 100%
+		.assortment__composition
+			width: 40%
+			margin-right: 10px
+			+r(450)
+				width: 70%
+		.assortment__reestablish
+			margin-left: 20px
+	&__box
+		&:last-of-type
+			.assortment__item
+				border-bottom: none
+	&__wrap
+		display: flex
+		justify-content: space-between
+		flex-direction: column
+		width: 100%
+	&__text
+		width: calc(100% - 200px)
+	&__anchor
+		width: 67%
+		+r(800)
+			width: 100%
+	&__link
+		position: relative
+		display: inline
+		// font-size: 17px
+		font-size: 15px // correct for e_accii_rubricator.html
+		color: $light-gray
+		line-height: 1.3
+		border-bottom: 1px solid $light-gray
+		+rm
+		+tr(.4s)
+		&:after
+			content: attr(discnt)
+			position: absolute
+			top: 2px
+			left: 120%
+			white-space: nowrap
+			font-size: 15px
+			color: #7fc758
+			+rl
+		&.cnt
+			&:after
+				content: attr(cnt)
+				position: absolute
+				top: 2px
+				left: 120%
+				white-space: nowrap
+				font-size: 17px
+				color: $gray
+				+rl
+		&:hover
+			border-color: $n
+	&__place
+		width: 33%
+		text-align: left
+		font-size: 15px
+		white-space: nowrap
+		+r(800)
+			width: auto
+			margin-top: 10px
+	&__cost
+		display: flex
+		align-items: center
+		white-space: nowrap
+		// flex: 0 1 30%
+		width: 33%
+		justify-content: space-between
+		+r(800)
+			flex-wrap: wrap
+			align-items: flex-end
+			flex-direction: column-reverse
+			width: 140px
+	&__price
+		width: 90px
+		text-align: right
+		position: relative
+		font-size: 17px
+		margin-right: 20px
+		line-height: 1
+		+rb
+		&:after
+			content: '\20BD'
+			font-size: 17px
+			color: $light-gray
+			margin-left: .2em
+			font-weight: bold
+		+ .btn__buy
+			+r(800)
+				margin-bottom: 10px
+	// &__buy
+	// 	display: inline-block
+	// 	width: 130px
+	// 	height: 40px
+	// 	text-align: center
+	// 	line-height: 40px
+	// 	background-color: $yellow
+	// 	text-transform: uppercase
+	// 	font-size: 13px
+	// 	color: $light-gray
+	// 	border-radius: 40px
+	// 	+ub
+	// 	+tr(.4s)
+	// 	+r(800)
+	// 		margin-bottom: 10px
+	// 	&:hover
+	// 		color: #000
+	// 		background-color: #ffdf61
+	&__talon
+		position: relative
+		min-width: 90px
+		width: 90px
+		height: 56px
+		border-radius: 4px
+		margin-right: 20px
+		overflow: hidden
+		font-size: 0
+		img
+			display: inline-block
+			vertical-align: top
+			width: 100%
+			height: auto
+	&__search
+		position: relative
+		&_input
+			width: 100%
+			height: 40px
+			border-radius: 40px
+			padding: 0 20px
+			border: none
+			outline: none
+			+inputsdw
+			+placeholder
+				color: $gray
+		.search__btn
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			border-radius: 40px
+			height: 40px
+			span
+				line-height: 40px
+				+rr
+	&__order
+		width: 190px
+		margin-right: 30px
+		div.assortment__num
+			width: 86px
+			margin-right: 10px
+		.assortment__desc
+			display: inline-block
+	&__composition
+		width: 33%
+		margin-right: 10px
+		font-size: 15px
+		+r(650)
+			width: 62%
+		+r(500)
+			width: 100%
+			margin: 5px 0
+	&__status
+		width: 33%
+		+r(650)
+			width: 100%
+			margin-top: 5px
+		&_done
+			display: inline-block
+			color: $green
+			font-size: 15px
+			margin-right: 10px
+			+rl
+		&_date
+			display: inline-block
+			color: $gray
+			font-size: 15px
+			+rl
+		&_error
+			display: inline-block
+			color: $red
+			font-size: 15px
+			+rl
+	&__desc
+		font-size: 15px
+		color: $gray
+		+rl
+	&_main
+		background-color: #FFF
+		margin-left: 320px
+		padding-bottom: 40px
+		+clr
+		+r(850)
+			margin-left: 0
+			padding: 0 20px 20px
+		.assortment
+			&__name
+				font-size: 17px
+				color: $light-gray
+				+rm
+				span
+					display: inline-block
+					margin-left: 10px
+					font-size: 17px
+					color: $gray
+					+rl
+			&__header
+				padding: 15px 0
+			&__content
+				width: 100%
+				&_top
+					+r(640)
+						align-items: flex-start
+						flex-direction: column
+			&__item
+				// padding: 23px 20px 23px 0// del for e_accii_rubricator.html
+				padding: 23px 0px 23px 0
+				+r(650)
+					padding-right: 0
+					flex-wrap: wrap
+					flex-direction: column
+		.pharmacy__adress
+			//margin-top: 5px// del at fix#2
+		.pharmacy__name
+			// flex-grow: 0
+			flex: 0 1 47%
+			+r(650)
+				width: 100%
+				max-width: 100%
+				margin-bottom: 10px
+				flex: 0 1 auto
+				height: auto
+				overflow: visible
+				white-space: normal
+		.pharmacy__time
+			text-align: left
+			flex: 0 1 33%
+			padding-right: 65px
+			+r(650)
+				flex: 1 1 auto
+				width: 100%
+				margin: 10px 0
+		.pharmacy__price
+			text-align: right
+			display: flex
+			flex-direction: column
+			flex: 0 1 100px
+
+			+r(650)
+				display: flex
+				flex: 0 1 100%
+				justify-content: space-between
+				align-items: center
+			// +r(400)// del for  //e_apteka_tovary.html !!!!
+				// display: block// del for  //e_apteka_tovary.html !!!!
+				// text-align: left// del for  //e_apteka_tovary.html !!!!
+		.btn__buy
+			margin-top: auto
+			width: 100%
+		.pharmacy__price_desc
+			position: relative
+			&.mod_sale
+				+r(650)
+					// width: 100% // dell see /e_apteka_accii.html#
+					text-align: left
+					// padding-left: 80px
+				&:before
+					content: attr(sale) '\20BD'
+					position: absolute
+					top: 1px
+					right: 112%
+					font-size: 15px
+					text-decoration: line-through
+					color: $gray
+					+rl
+					+r(650)
+						right: -80%
+				+ .btn__buy
+					margin-top: 15px
+					+r(650)
+						margin-top: 0
+					+r(400)
+						margin-top: 15px
+			&.mod_itm
+				+r(650)
+					// width: 100% // dell see /e_apteka_accii.html#
+					text-align: left
+					// padding-left: 80px
+				&:before
+					content: attr(itm)
+					position: absolute
+					top: 0px
+					right: 112%
+					font-size: 15px
+					color: $gray
+					white-space: nowrap
+					+rl
+					+r(650)
+						right: -105px
+				+ .btn__buy
+					margin-top: 15px
+		.pharmacy__desc
+			white-space: nowrap
+			display: inline-block
+			margin-right: 20px
+		// .expectancy__text
+		// 	display: flex
+		// 	flex: 1 1 auto
+		// 	flex-wrap: wrap
+		.expectancy__content
+			display: flex
+			flex: 1 1 40%
+			+r(800)
+				margin-bottom: 10px
+	&__reestablish
+		// display: inline-block
+		display: none
+		width: 140px
+		height: 40px
+		vertical-align: top
+		border-radius: 40px
+		text-align: center
+		border: 2px solid $green
+		background-color: #FFF
+		+tr(.4s)
+		&:hover
+			background-color: $green
+			.assortment__reestablish_link
+				color: #fff
+		&.in_trash
+			display: inline-block
+			+r(800)
+				margin-top: 10px
+		&_link
+			display: block
+			line-height: 36px
+			color: $green
+			text-transform: uppercase
+			font-size: 13px
+			+ub
+		&_desc
+			color: $light-gray
+			font-size: 15px
+			+rl
+	&__footer
+		margin-top: 10px
+		display: flex
+		+r(650)
+			flex-direction: column//for e_blog.html
+		&.mod_wide
+			width: 100%
+	&__sect
+		margin-right: 20px
+	&.mod_issue
+		.assortment__item
+			&:nth-child(even)
+				background-color: $grayHover
+			&:hover
+				background-color: $greenHover
+
+// ---------------------------------------
+
+.basket
+	background-color: #FFF
+	// border-radius: 8px
+	overflow: hidden
+	padding-bottom: 40px
+	+r(800)
+		margin-left: -20px
+		width: calc(100% + 20px)
+		border-radius: 0
+		padding-left: 20px
+	&.mod_zakaz
+		.assortment__content
+			justify-content: flex-start
+			align-items: center
+			width: calc(100% - 270px)
+			+r(800)
+				width: calc(100% - 25px)
+		.basket__order,
+		.basket__num
+			// text-align: center
+			width: 105px
+
+	&__header
+		padding: 18px 38px 8px 79px
+		border-bottom: 1px solid #efefef
+		+clr
+
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		+r(800)
+			display: none
+		&.mod_correct
+			padding: 18px 38px
+		p
+			font-size: 13px
+			line-height: 1
+			color: $gray
+			float: left
+			text-align: left
+		.title__popular
+			margin-bottom: 0
+	&__name
+		width: calc(100% - 350px)
+	&__math
+		width: 190px
+	&__order
+		display: inline-block
+		width: 165px
+		margin-right: 10px
+	&__composition
+		display: inline-block
+		width: 20%
+		margin-right: 10px
+	&__status
+		display: inline-block
+		width: 33%
+		margin-right: 10px
+	&__add
+		display: inline-block
+		// width: 214px
+		height: 40px
+		padding: 0 18px
+		border: 2px solid $green
+		text-align: center
+		vertical-align: top
+		border-radius: 40px
+		+tr(.4s)
+		&:hover
+			background-color: $green
+			color: #fff
+			span
+				color: #fff
+				&:before
+					+s(icon-plus-white)
+		span
+			position: relative
+			padding-left: 20px
+			text-transform: uppercase
+			font-size: 13px
+			line-height: 36px
+			color: $green
+			+ub
+			+tr(.4s)
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				+try(-50%)
+				+s(icon-plus)
+	&__footer
+		width: 100%
+		display: flex
+		justify-content: space-between
+		div.assortment__link
+			border-bottom: none
+			white-space: normal
+			overflow: visible
+			margin-top: 12px
+		.price
+			justify-content: flex-start// add for basket.html
+			&__all
+				width: 270px // add for basket.html
+				margin-left: 50px// add for basket.html
+				justify-content: space-between// add for basket.html
+	&_empty
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		// min-height: 250px
+		min-height: calc(100vh - 678px)
+		height: 100%
+		position: relative
+		background-color: $body
+		&_content
+
+			// // backface-visibility: none
+			// will-change: transform
+			// -webkit-backface-visibility: hidden
+			// -webkit-font-smoothing: subpixel-antialiased
+			// -webkit-transform: translateZ(0) translateX(-50%) translateY(-50%) scale(1.0, 1.0)
+
+			p
+				font-size: 24px
+				line-height: 45px
+				color: $light-gray
+				margin-bottom: 20px
+				+rl
+				strong
+					font-size: 36px
+					color: $light-gray
+					margin-bottom: 20px
+					+rr
+			// a
+			// 	display: inline-block
+			// 	width: 215px
+			// 	height: 40px
+			// 	text-align: center
+			// 	line-height: 40px
+			// 	border-radius: 40px
+			// 	background-color: $yellow
+			// 	text-transform: uppercase
+			// 	font-size: 13px
+			// 	color: #000
+			// 	will-change: transform
+			// 	+ub
+			// 	+tr(.4s)
+			// 	&:hover
+			// 		opacity: .8
+
+	.assortment
+		&__item
+			position: relative
+			width: 100%
+			justify-content: flex-start
+			+tr(.4s)
+			+r(800)
+				padding-left: 20px
+				padding-right: 20px
+				flex-direction: column
+			&.mod_mobile-reverse
+				+r(800)
+					flex-direction: column-reverse
+			&.is_removed
+				//height: 0// before uncoment see p_skidochnye_karty.html
+				//padding: 0// before uncoment see p_skidochnye_karty.html
+				//overflow: hidden// before uncoment see p_skidochnye_karty.html
+				//border: 0// before uncoment see p_skidochnye_karty.html
+				.talon
+					display: none
+
+		&__content
+			@extend .basket__name
+			justify-content: space-between
+			+r(800)
+				width: calc(100% - 50px)
+		&__num
+			display: inline-block
+			width: 39px
+			font-size: 17px
+			color: #c4c4c4
+			+rm
+		&__anchor
+			width: calc(100% - 40px)
+			white-space: nowrap
+			padding-right: 20px
+		&__link
+			display: inline-block
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
+			max-width: 100%
+
+		&__cost
+			width: 330px
+			padding-right: 30px//
+			justify-content: flex-start
+			+r(800)
+				width: 100%
+				padding: 18px 0 0 40px
+				flex-direction: row
+				align-items: center
+				justify-content: space-between
+			+r(400)
+				padding: 18px 0 0 0
+				flex-direction: column
+				justify-content: center
+			&.mod_correct
+				width: 250px
+				+r(800)
+					padding: 0
+				+r(400)
+					width: 100%
+					flex-direction: row
+
+		// &__reestablish
+		// 	// display: inline-block
+		// 	display: none
+		// 	width: 140px
+		// 	height: 40px
+		// 	vertical-align: top
+		// 	border-radius: 40px
+		// 	text-align: center
+		// 	border: 2px solid $green
+		// 	background-color: #FFF
+		// 	&.in_trash
+		// 		display: inline-block
+		// 		+r(800)
+		// 			margin-top: 10px
+		// 	&_link
+		// 		line-height: 36px
+		// 		color: $green
+		// 		text-transform: uppercase
+		// 		font-size: 13px
+		// 		+ub
+		&__price
+			text-align: right
+			width: 120px
+			padding-left: 30px
+			+r(400)
+				padding: 15px 0 0 // basket.html
+		// .price__from
+	.icon-remove
+		+r(800)
+			top: 22px
+			right: 20px
+			transform: none
+	.pharmacy__btns
+		width: 236px //E_my_zakazy.html
+		flex: 0 1 236px
+	.btn__small,
+	.btn__large
+		margin: 0
+		+r(650)
+			margin: 5px 0
+	&.mod_talon
+		padding-left: 40px
+		.assortment
+			&__item
+				padding: 20px 0
+				// +r(800)
+				// 	padding: 20px
+			&__content
+				+r(800)
+					width: 100%
+			&__anchor
+				width: calc(100% - 110px)
+			&__cost
+				width: 280px
+				padding: 0 0 0 20px
+				+r(800)
+					width: 100%
+					flex-wrap: wrap
+					padding: 0
+		.icon-remove
+			right: 0
+
+.talon
+	flex: 1 1 auto
+	display: flex
+	align-items: center
+	justify-content: space-between
+	+r(800)
+		flex-wrap: wrap
+	&__desc
+		+r(800)
+			display: block
+			width: 100%
+			margin-top: 10px
+// ----------------------------------------
+
+.pharmacy
+	&__name
+		flex: 1 1 32%
+		text-align: left
+		font-size: 13px
+		color: $gray
+		+rl
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		// max-width: 32%
+		+r(470)
+			flex: 1 1 auto
+			width: 100%
+			margin-bottom: 10px
+		span
+			font-size: 17px
+			color: $gray
+			+rl
+	&__desc
+		font-size: 15px
+		color: $light-gray
+		+rl
+		// strong
+		// 	font-size: 17px
+		// 	color: #000
+		// 	+rm
+
+	&__distance
+		flex: 0 1 21%
+		text-align: center
+		+r(650)
+			text-align: left
+		&_title
+			position: relative
+			padding-right: 15px
+			font-size: 13px
+			color: $gray
+			+rl
+			&:after
+				content: ''
+				position: absolute
+				top: 50%
+				right: 0
+				+try(-25%)
+				+arr(8, 5, $gray, b)
+	&__time
+		flex: 0 1 21%
+		text-align: center
+		font-size: 13px
+		color: $gray
+		+rl
+		white-space: nowrap
+	&__price
+		flex: 0 1 21%
+		text-align: center
+		&.mod_flex
+			display: flex
+			width: 330px
+			flex: 0 1 330px
+			align-items: center
+			justify-content: flex-end
+			.btn__buy
+				margin-left: 20px
+		&_title
+			@extend .pharmacy__distance_title
+		&_desc
+			position: relative
+			display: inline-block
+			font-size: 15px
+			color: $light-gray
+			// margin-bottom: 15px
+			+rb
+			+r(650)
+				margin: 5px 0 //e_apteka_tovary.html !!!!
+			&:after
+				content: '\20BD'
+				font-size: 15px
+				color: $light-gray
+				margin-left: .2em
+				+rb
+			//+ .btn__buy
+			//	margin-top: 15px
+			//	+r(650) //e_set_rubrikator.html
+			//		margin-bottom: 0 //add for e_accii_rubricator.html
+	&__link
+		@extend .assortment__link
+		&_small
+			font-size: 13px
+			line-height: .9
+			border-bottom: 1px solid $gray
+			color: $gray
+			+rl
+			+tr(.4s)
+			&:hover
+				border-color: $n
+	&__metro
+		font-size: 13px
+		color: $gray
+		margin: 5px 0
+		white-space: nowrap
+		color: $gray
+		//margin-bottom: 10px//correct for e_accii_rubricator.html
+		+rl
+	&__btns
+		display: flex
+		// flex: 0 1 290px// del for e_oformlenie_step_1.html
+		flex: 0 1 158px
+		align-items: center
+		justify-content: space-between
+		+r(900)
+			margin-top: 15px
+		+r(640)
+			flex: 0 1 auto
+			flex-wrap: wrap
+			width: 100%
+			a
+				width: 100% !important
+				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
+		&.mod_partner
+			flex: 0 1 380px
+			+r(640)
+				flex: 1 1 auto
+			.pharmacy__delivery
+				width: auto
+				padding: 0 20px
+				white-space: nowrap
+				margin-right: 10px
+				+r(640)
+					margin-right: 0 // p-my-apteki.html
+	&__delivery
+		display: inline-block
+		width: 120px
+		height: 40px
+		border: 2px solid $green
+		color: $green
+		border-radius: 40px
+		text-align: center
+		text-transform: uppercase
+		font-size: 13px
+		line-height: 36px
+		+ub
+		+tr(.4s)
+		&:hover
+			background-color: $green
+			color: #fff
+		&.is_disabled
+			opacity: .5
+			cursor: default
+			&:hover
+				background-color: $n
+				color: $green
+		&.is_active
+			background-color: $n
+			border-color: $red
+			span
+				color: $red
+			&:hover
+				border-color: $red
+				background-color: $red
+				span
+					color: #fff
+
+	&__getSelf
+		display: inline-block
+		height: 40px
+		width: 156px
+		font-size: 13px
+		line-height: 40px
+		text-align: center
+		text-transform: uppercase
+		color: $light-gray
+		background-color: $sun
+		border-radius: 40px
+		+ub
+		+tr(.4s)
+		&:hover
+			background-color: $yellow
+	&__order
+		&.mod_wide
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 150px
+		.pharmacy__price
+			flex: 0 1 auto
+
+	.assortment
+		&__item
+			+r(900)
+				flex-wrap: wrap
+		&__content
+			// width: calc(100% - 300px)
+			width: calc(100% - 160px)
+			+r(900)
+				width: 100%
+// ---------------------------------------
+
+.expectancy
+	// padding: 0 38px
+	padding-bottom: 30px
+	position: relative
+	background-color: #FFF
+	+clr
+	+r(800)
+		padding: 28px 20px //E_order_delivery.html
+	&.mod_green
+		background-color: #f4fbf1
+
+	.title__popular
+		margin-bottom: 10px
+	&__item
+		position: relative
+		padding: 20px 0
+		margin: 0 40px
+		border-bottom: 1px solid #eeeeed
+		+clr
+		+r(800)
+			margin: 0
+	&__content
+		+clr
+		// float: left
+	&__text
+		&.mod_flex
+			display: flex
+			flex-direction: column
+		.check
+			// margin-top: 6px
+			vertical-align: top
+			// margin-left: 10px// !!! remove for all
+
+	&__num
+		display: flex
+		justify-content: flex-end
+		align-items: stretch
+		white-space: nowrap
+
+		+r(650)
+			justify-content: center
+		// 	flex-direction: column
+		// 	align-items: center
+		p
+			font-size: 15px
+			color: $light-gray
+			+rl
+
+
+	&__pic
+		// display: inline-block
+		float: left
+		margin-right: 20px
+		position: relative
+		width: 90px
+		min-width: 90px
+		height: 90px
+		border-radius: 4px
+		border: 1px solid #eeeeed
+		background-color: #FFF
+		overflow: hidden
+	&__img
+		+vcenter
+		min-height: 90%
+		min-width: 90%
+	&__text
+		// float: left
+	&__title
+		display: inline-block
+		// border-bottom: 1px solid #000
+		max-width: calc(100% - 352px) // if wrong see :2910
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		margin-bottom: 0px
+		+rm
+		+r(800)
+			max-width: calc(100% - 262px)
+		+r(650)
+			max-width: calc(100% - 120px)
+			width: 100%
+			white-space: normal
+		&:hover
+			span
+				border-color: $n
+		span
+			display: inline-block
+			font-size: 15px
+			line-height: .9
+			color: $light-gray
+			border-bottom: 1px solid $light-gray
+			+rm
+			+r(650)
+				display: inline
+				text-decoration: underline
+				border: none
+	&__desc
+		font-size: 13px
+		color: $gray
+		line-height: 1.2
+		+rl
+		+ .expectancy__edition
+			margin: 5px 0 0 // for e_tov_opisanie.html
+		time
+			color: $light-gray
+	&__link
+		@extend .expectancy__desc
+		color: $green
+		border-bottom: 1px solid $green
+		+tr(.4s)
+		&:hover
+			border-color: $n
+
+	&__group
+		+r(800)
+			margin: 10px 0
+	&__group_link
+		@extend .expectancy__desc
+		color: $green
+		border-bottom: 1px solid $green
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	&__edition
+		@extend .expectancy__desc
+		color: $light-gray
+	&__footer
+		padding: 25px 40px 0
+		// border-top: 1px solid #eeeeed
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		+clr
+		+r(800)
+			padding: 25px 0 0
+	&__license
+		font-size: 13px
+		color: $gray
+		+rl
+	&__buy
+		position: absolute
+		top: 18px
+		right: 0
+		width: 230px
+		// float: right
+		vertical-align: top
+
+		display: flex
+		justify-content: space-between
+		// +clr
+		+r(800)
+			width: 140px
+		+r(650)
+			display: flex
+			align-items: center
+			// width: calc(100% - 120px)
+			position: static
+	&__sum
+		// float: left
+		// width: 50%
+		font-size: 15px
+		color: $light-gray
+		+rl
+	&__price
+		// float: left
+		position: relative
+		// width: 50%
+		font-size: 15px
+		text-transform: uppercase
+		color: $light-gray
+		+rb
+		+r(800)
+			text-align: right
+		&:after
+			content: '\20BD'
+			font-size: 15px
+			color: $light-gray
+			margin-left: .2em
+			+rb
+	.info
+		margin-bottom: 10px
+		display: flex
+		// width: 100%
+		justify-content: space-between
+		+r(800)
+			display: flex
+			flex-direction: column-reverse
+
+		&__title
+			+r(800)
+				text-align: center
+		&__btns
+			+r(800)
+				margin: 15px auto 20px
+		&__check
+			+r(800)
+				margin-top: 5px
+		&__right
+			display: flex
+			flex-direction: column
+			align-self: flex-end
+			+r(800)
+				width: 100%
+			.info__title
+				+r(800)
+					text-align: left
+		&__row
+			+r(800)
+				white-space: nowrap
+// -----------------------------------
+
+.info
+	position: relative
+	width: 100%
+	+clr
+	&__title
+		display: block
+		font-size: 15px
+		margin-bottom: 10px
+		color: $light-gray
+		+rb
+	&__left
+		// float: left
+
+	&__right
+		// float: right
+		// width: 27%
+		margin-left: auto
+		width: 230px
+		vertical-align: top
+		margin-bottom: 15px
+
+	&__btns
+		width: 290px
+		max-width: 100%
+		display: flex
+		flex: 0 1 auto
+		align-items: center
+		justify-content: space-between
+		margin: 15px 0 10px
+		+r(650)
+			flex-direction: column
+	&__delivery
+		@extend .pharmacy__delivery
+		display: inline-block
+		+r(650)
+			width: 100%
+			margin: 5px 0
+	&__getSelf
+		@extend .pharmacy__getSelf
+		display: inline-block
+		+r(650)
+			width: 100%
+			margin: 5px 0
+	&__driving
+		display: inline-block
+		font-size: 13px
+		color: $light-gray
+		border-bottom: 1px dotted $light-gray
+		margin-bottom: 10px
+		+rl
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	&__row
+		display: flex
+		align-items: center
+
+		margin-bottom: 2px
+		+clr
+		&_btns
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			.btn__small
+				margin: 0 0 0 20px
+	&__desc
+		float: left
+		width: 50%
+		font-size: 15px
+		line-height: 20px
+		color: $light-gray
+		+rl
+	&__strong
+		float: left
+		width: 50%
+		font-size: 15px
+		+rb
+		&.mod_large
+			font-size: 24px
+			line-height: 30px
+	&__price
+		position: relative
+		&:after
+			content: '\20BD'
+			font-size: 15px
+			color: $light-gray
+			margin-left: .2em
+			+rb
+		&.mod_large
+			font-size: 24px
+			line-height: 30px
+			&:after
+				font-size: 24px
+	&__print
+		background-color: $sun
+		float: right
+		width: 156px
+		height: 40px
+		border-radius: 40px
+		margin: 10px 0 0
+		text-transform: uppercase
+		text-align: center
+		line-height: 40px
+		font-size: 13px
+		color: $light-gray
+		cursor: pointer
+		+ub
+		+tr(.4s)
+		&:hover
+			background-color: $yellow
+// ----------------------------------------
+
+.price
+	width: 400px
+	min-height: 106px
+	display: flex
+	justify-content: center
+	align-content: space-between
+	flex-wrap: wrap
+	&.mod_correct
+		min-height: 1px
+		.price__all
+			justify-content: flex-start
+			padding-left: 55px
+			+r(400)
+				padding-left: 10px
+		.price__sum
+			width: 120px
+			text-align: right
+			margin-left: 64px
+			+r(400)
+				padding-left: 10px
+	+r(800)
+		width: 100%
+	&__all
+		display: flex
+		width: 100%
+		justify-content: space-around
+		align-items: center
+		+r(800)
+			display: block
+
+	&__text,
+	&__sum
+		font-size: 24px
+		color: $light-gray
+		+rb
+		+r(800)
+			display: inline-block
+			margin-right: 60px
+		+r(400)
+			margin-right: 10px
+	// strong
+	&_end
+		position: relative
+		&:after
+			content: '\20BD'
+			font-size: 24px
+			color: $light-gray
+			margin-left: .2em
+			+rb
+	&__btn
+		width: 100%
+		display: inline-block
+		padding: 16px 10px
+		margin-top: 15px
+		border-radius: 50px
+		text-transform: uppercase
+		font-size: 13px
+		color: $light-gray
+		background-color: $sun
+		text-align: center
+		+ub
+		+tr(.4s)
+		&:hover
+			background-color: $yellow
+// ---------------------------------------
+
+.quantity
+	display: inline-block
+	width: 140px
+	height: 40px
+	border-radius: 40px
+	font-size: 0
+
+	overflow: hidden
+	&.is_hide
+		display: none
+
+	&__input
+		display: inline-block
+		width: 60px
+		height: 40px
+
+		outline: none
+		border: none
+		margin: 0
+		padding: 0
+
+		font-size: 17px
+		font-weight: 800
+		color: $light-gray
+		text-align: center
+		background-color: #f7f6f4
+		box-shadow: inset 0 0 10px 2px rgba(0,0,0,.1)
+		+r(650)
+			width: 40px
+		+r(400)
+			width: 60px
+		&::expand
+			display: none
+	&__minus
+		border-radius: 20px 0 0 20px
+		&:after
+			content: ''
+			+vcenter
+			+s(icon-minus)
+	&__plus
+		border-radius: 0 20px 20px 0
+		&:after
+			content: ''
+			+vcenter
+			+s(icon-plus)
+	button
+		position: relative
+		width: 40px
+		height: 40px
+		border: 2px solid #e4e3e2
+		background-color: #FFF
+
+		outline: none
+		+tr(.4s)
+		// &:hover
+		// 	opacity: .8
+		// 	+gray
+// ----------------------------------------
+.more
+	text-align: center
+	margin: 30px auto
+
+	&__link
+		display: inline-block
+		font-size: 13px
+		text-align: center
+		color: $light-gray
+		text-transform: uppercase
+		padding: 13px 25px
+		border: 2px solid #d8d8d8
+		border-radius: 50px
+		+tr(.4s)
+		+ub
+		&:hover
+			background-color: #d8d8d8
+// ----------------------------------------
+
+.retrieval
+	position: relative
+	background-color: #FFF
+	padding: 24px 40px 1px
+	border-radius: 8px
+	+r(900)
+		padding: 24px 20px 20px
+
+	&__form
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 30px
+		+r(800)
+			margin-bottom: 20px
+		.title__popular
+			margin: 0 20px 0 0
+		&_wrap
+			display: flex
+			align-items: center
+			justify-content: space-between
+			flex: 1 1 auto
+			+r(800)
+				flex-wrap: wrap
+		.price__btn
+			width: 280px
+			margin-top: 30px
+
+	&__fieldset
+		position: relative
+		display: inline-block
+		width: 32%
+		vertical-align: top
+		+r(800)
+			width: 80%
+			margin-bottom: 10px
+		+r(650)
+			width: 100%
+		&.input--filled
+			.retrieval
+				&__label
+					top: 26%
+					font-size: 12px
+				&__input
+					padding-top: 15px
+		&.input--focus
+			.retrieval
+				&__input
+					border-color: $green
+					box-shadow: none
+	&__input
+		width: 100%
+		height: 40px
+		border-radius: 40px
+		padding: 0 20px
+		border: 2px solid $n
+		outline: none
+		background-color: #f7f6f4
+		box-shadow: inset 0 0 10px 2px rgba(0,0,0,0.1)
+		font-size: 13px
+		color: $light-gray
+		+rr
+		+tr(.4s)
+		&.has-error
+			// box-shadow: 0 0 20px 0 rgba(199, 89, 89, .6) !important
+			border-color: $red
+			box-shadow: none
+		+ .has-error
+			display: block
+			margin-top: 5px
+			padding-left: 20px
+			text-align: left
+			color: $red
+
+	&__label
+		position: absolute
+		top: 50%
+		left: 20px
+		+try(-50%)
+		font-size: 13px
+		line-height: .9
+		color: $gray
+		+rr
+		+tr(.4s)
+
+	&__content
+		.title__popular
+			line-height: 1.6
+
+	&__desc
+		font-size: 13px
+		color: $light-gray
+		// +gray
+		+rl
+		&.mod_inline
+			display: inline-block
+			margin-right: 10px
+			+r(800)
+				display: block
+	&__bold
+		font-size: 13px
+		color: $light-gray
+		+rr
+		+r(650)
+			display: block
+	&__link
+		display: inline-block
+		margin-left: 10px
+		font-size: 13px
+		color: $light-gray
+		border-bottom: 2px dotted $light-gray
+		+rr
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	&__slider
+		position: relative
+		display: inline-block
+		width: 260px
+		+r(800)
+			margin-top: 20px
+			width: calc(100% - 120px)
+		&_range
+			position: absolute
+			top: 50%
+			right: -90px
+			display: inline-block
+			width: 70px
+			height: 20px
+			border-radius: 20px
+			font-size: 13px
+			color: $light-gray
+			text-align: center
+			background-color: #f7f6f4
+			box-shadow: inset 0 0 10px 2px rgba(0,0,0,0.1)
+
+			border: none
+			outline: none
+			+try(-50%)
+			+rr
+	&__footer
+		border-top: 1px solid #e8e8e8
+		margin-top: 25px
+		padding: 1px 0 20px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		// +r(800)
+
+	&__check
+		margin-top: 20px
+		+r(650)
+			width: 100%
+	&__wrap
+		// margin-top: 20px
+		width: 350px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+r(900)
+			width: 100%
+			flex-wrap: wrap
+		.drugstore__search_input
+			margin-bottom: 0
+		&.mod_short
+			width: 300px
+	&__opening
+		position: relative
+		width: 130px
+		height: 30px
+		margin-top: 20px
+		// border: 2px solid #d6d6d6
+		// border-radius: 30px
+		// background-color: #FFF
+		// text-align: center
+		// font-size: 13px
+		// line-height: 26px
+		// color: $light-gray
+		// cursor: pointer
+		// +rr
+		// +tr(.4s)
+		+r(900)
+			width: 36%
+			min-width: 200px
+		+r(650)
+			width: 100%
+		&:hover &
+			&__title
+				border-color: $green
+				background-color: $green
+				color: #fff
+		&.is_opened,
+		&.has-check
+			.retrieval__title
+				border-color: $green
+				background-color: $n
+				color: $green
+				&:hover
+					border-color: $green
+					background-color: $green
+					color: #fff
+		&.has-check
+			.selector__btn
+				display: inline-block
+
+		// &:hover
+		// 	& > .opening
+		// 		transform: translateX(-50%) rotateX(0deg)
+		// 		+r(900)
+		// 			left: 0
+		// 			transform: translateX(0%) rotateX(0deg)
+	&__title
+		margin: 0
+		border: 2px solid #d6d6d6
+		border-radius: 30px
+		background-color: #FFF
+		text-align: center
+		font-size: 13px
+		line-height: 26px
+		color: $light-gray
+		cursor: pointer
+		+rr
+		+tr(.4s)
+		&:hover
+			border-color: $green
+			background-color: $green
+			color: #fff
+	&__btn
+		@extend .selector__btn
+	&__showing
+		display: inline-block
+		position: relative
+		width: 210px
+		height: 30px
+		border: 2px solid #dbdbdb
+		background-color: #FFF
+		border-radius: 30px
+		overflow: hidden
+		margin-top: 20px
+		+clr
+		+r(900)
+			width: 57%
+			min-width: 260px
+		+r(650)
+			width: 100%
+		&_spin
+			position: absolute
+			height: 100%
+			top: 0
+			bottom: 0
+			right: 0
+			width: 50%
+			border-radius: 30px
+			background-color: #dbdbdb
+			z-index: 0
+			+tr(.4s)
+			&.to-left
+				right: 50%
+		a
+			position: relative
+			float: left
+			width: 50%
+			height: 100%
+			text-align: center
+			line-height: 26px
+			color: $light-gray
+			z-index: 2
+			+rl
+			+tr(.4s)
+			&.is_active
+				span
+					border-color: $n
+		// &_map
+		// 	// &:after
+		// 	// 	content: ''
+		// 	// 	position: absolute
+		// 	// 	top: 50%
+		// 	// 	left: 18px
+		// 	// 	+try(-50%)
+		// 	// 	+s(icon-show-map)
+		// 	span
+		// 		margin-left: 20px
+		// 		border-bottom: 1px dotted $light-gray
+		&_list
+			// &:after
+			// 	content: ''
+			// 	position: absolute
+			// 	top: 50%
+			// 	left: 18px
+			// 	+try(-50%)
+			// 	+s(icon-show-list)
+			span
+				margin-left: 10px
+				border-bottom: 1px dotted $light-gray
+// --------------------------------
+
+.toggler
+	display: none
+	// &.is_active
+	// 	display: block
+
+.opening
+	position: absolute
+	top: 36px
+	left: 50%
+	width: 570px
+	padding: 18px
+	background-color: #FFF
+	border-radius: 8px
+	z-index: 200
+	transform-origin: top center
+	border-radius: 8px!important
+	transform: translateX(-50%) rotateX(90deg)
+	+tr(.4s)
+	+r(900)
+		width: 300px
+		left: 0
+		transform: translateX(0%) rotateX(90deg)
+	+r(400)
+		width: 260px
+
+	&:before
+		content: ''
+		position: absolute
+		top: -5px
+		left: 50%
+		+trx(-50%)
+		+arr(10, 5, #fff, t)
+		+r(900)
+			left: 20%
+	&.is_opened
+		transform: translateX(-50%) rotateX(0deg)
+		+r(900)
+			left: 0
+			transform: translateX(0%) rotateX(0deg)
+	&__form
+		&_work
+			display: inline-block
+			margin-right: 10px
+			font-size: 13px
+			color: $gray
+			white-space: nowrap
+			+rl
+			// +r(900)
+			// 	display: block
+			// 	width: 100%
+	&__wrap
+		text-align: left
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+r(900)
+			flex-wrap: wrap
+	&__select
+		display: flex
+		width: 48%
+		align-items: center
+		justify-content: space-between
+		+r(900)
+			width: 100%
+			margin-top: 10px
+	&__fieldset
+		text-align: left
+		position: relative
+		&_time
+			height: 40px
+
+	&__input
+		width: 125px
+		height: 40px
+		border-radius: 40px
+		border: none
+		outline: none
+		padding: 0 17px !important
+		+inputsdw
+		+r(800)
+			width: 106px
+		+placeholder
+			font-size: 13px
+			color: $light-gray
+			+rl
+	&__label
+		position: absolute
+		top: 50%
+		+try(-50%)
+		left: 20px
+		font-size: 13px
+		color: $light-gray
+		+rl
+	&__btns
+		text-align: center
+		margin-top: 20px
+	&__submit
+		display: inline-block
+		width: 124px
+		height: 40px
+		background-color: $sun
+		text-transform: uppercase
+		font-size: 13px
+		line-height: 40px
+		text-align: center
+		border: none
+		outline: none
+		border-radius: 40px
+		+ub
+		+tr(.4s)
+		&:hover
+			background-color: $yellow
+	&__reset
+		display: inline-block
+		text-transform: uppercase
+		background-color: $n
+		font-size: 13px
+		// line-height: 40px
+		margin: 12px 0 0 16px
+		text-align: center
+		border: none
+		outline: none
+		border-bottom: 2px dotted $light-gray
+		+ub
+	// -----------------------------------
+//  -----------------------------------
+
+.order
+	&.order_data
+		background-color: $n
+		padding: 0
+		+r(800)
+			padding: 0 20px  //E_order_delivery.html
+
+	&__form
+		display: flex
+		// justify-content: space-between
+		+r(800)
+			flex-wrap: wrap
+	&__adress
+		// display: flex// del for p_one_apteka_edit
+		// flex-direction: column// del for p_one_apteka_edit
+		width: 340px
+		flex: 0 1 340px
+		margin-right: 4%
+		padding-right: 4%
+		// float: left
+		border-right: 1px solid #efefef
+		+r(800)
+			width: 100%
+			flex: 0 1 auto
+			margin: 0 0 40px 0
+			padding: 0 0 40px 0
+			border-right: none
+			border-bottom: 1px solid #efefef
+		.add
+			margin: 0 0 20px
+			color: $green
+			border-color: $green
+	&__fieldset
+		position: relative
+		height: 40px
+		margin-bottom: 10px
+		font-size: 0
+		&.input--filled
+			.order__label
+				top: 25%
+				font-size: 10px
+			.order__input
+				padding-top: 15px
+		&.input--focus
+			.order
+				&__input
+					border-color: $green
+					box-shadow: none
+	&__input
+		display: block
+		width: 100%
+		height: 40px
+		border-radius: 40px
+		padding: 0 20px
+		color: #000
+		border: 2px solid $n
+		font-size: 13px
+		outline: none
+		+inputsdw
+		+rr
+		+tr(.4s)
+		&.has-error
+			// box-shadow: 0 0 20px 0 rgba(199, 89, 89, .6) !important
+			box-shadow: none
+			border-color: $red
+		+ .has-error
+			display: block
+			margin-top: 5px
+			padding-left: 20px
+			text-align: left
+			color: #c75959
+	&__label
+		position: absolute
+		top: 50%
+		left: 20px
+		+try(-50%)
+		font-size: 13px
+		color: #9a9a9a
+		pointer-events: none
+		+rr
+		+tr(.4s)
+
+	&__field_wrap &
+		&__fieldset
+			display: inline-block
+			vertical-align: top
+			width: 48%
+			margin-right: 2%
+			&:last-child
+				margin-right: 0
+	&__textarea
+		width: 100%
+		height: 100px
+		padding: 15px 20px
+		font-size: 13px
+		border: none
+		outline: none
+		resize: none
+		border-radius: 20px
+		+inputsdw
+		+placeholder
+			color: #9a9a9a
+			+rr
+	&__details
+		display: flex
+		flex-direction: column
+		flex: 1 0 0
+		+r(800)
+			width: 100%
+			flex: 1 0 auto
+	&__radio
+		margin-bottom: 10px
+		&_row
+			margin-bottom: 10px
+	&__row
+		display: flex
+		.order__fieldset
+			flex-grow: 1
+			margin-right: 10px
+		.order_small
+			width: 76px
+	&__cost
+		font-size: 15px
+		color: $light-gray
+		+rr
+	&__price
+		position: relative
+		+rb
+		&:after
+			content: '\20BD'
+			font-size: 15px
+			color: $light-gray
+			margin-left: .2em
+			+rb
+	&__licence
+		font-size: 13px
+		color: $gray
+		line-height: 1.1
+		margin-top: auto
+		+r(800)
+			margin-top: 30px
+
+	&__item
+		margin-top: 20px
+		padding-top: 20px
+		border-top: 1px solid #e8e8e8
+	&__table
+		.order__strong
+			padding: 10px 0 10px
+		.order__desc
+			// line-height: 40px
+			padding: 10px 20px 10px 0
+		td
+			vertical-align: top
+
+	&__desc
+		font-size: 15px
+		color: $light-gray
+		padding-right: 20px
+		vertical-align: top
+		+rl
+	&__strong,
+	&__strong a
+		font-size: 15px
+		color: $light-gray
+		white-space: normal
+		+rm
+// -------------------
+
+.payment
+	// &__form
+	&__radio
+		&_row
+			display: block
+			margin-bottom: 5px
+	&__change
+		position: relative
+		display: inline-block
+		margin-left: 25px
+		vertical-align: top
+		color: $gray
+		font-size: 13px
+		+rl
+		+r(650)
+			margin: 10px 0
+			display: block
+		&:after
+			content: '\20BD'
+			font-size: 13px
+			color: $gray
+			margin-left: .2em
+			+rr
+		input
+			display: inline-block
+			height: 20px
+			width: 70px
+			margin: 0 5px 0 10px
+			text-align: center
+			color: $light-gray
+			border: none
+			outline: none
+			border-radius: 20px
+			+rr
+			+inputsdw
+	&__btn
+		display: inline-block
+		width: 240px
+		height: 50px
+		border-radius: 40px
+		margin-top: 25px
+		background-color: $sun
+		text-transform: uppercase
+		text-align: center
+		line-height: 50px
+		font-size: 13px
+		color: #000
+		+ub
+		+tr(.4s)
+		+r(400)
+			width: 100%
+		&:hover
+			background-color: $yellow
+
+//  --------------------------------------
+
+#mapmini
+	display: inline-block
+	float: left
+	margin-right: 40px
+	width: 300px
+	height: 250px
+	border-radius: 8px
+	+r(800)
+		width: 100%
+		margin-right: 0
+		margin-bottom: 20px
+	&.mod_correct
+		float: right
+		margin-left: 40px
+		margin-right: 0
+	.leaflet-bottom
+		display: none
+// -------------------------------------
+#adressMap
+	width: calc(100% + 80px)
+	height: 260px
+	margin-left: -40px
+	margin-bottom: 30px
+	.leaflet-zoom-animated
+		fill: rgba(0, 0, 0, .8)!important
+	.leaflet-bottom
+		display: none
+	.dg-label
+		display: inline-block
+		top: -31px
+		width: 90px
+		white-space: nowrap
+		left: 50%
+		margin-left: -51px
+		text-align: center
+		&__content
+			background-color: #FFF
+			border: none
+			border-radius: 4px
+			color: $light-gray
+			box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4)
+			+rl
+			&:after
+				content: ''
+				position: absolute
+				bottom: -5px
+				left: 50%
+				+trx(-50%)
+				+arr(10, 5, #fff, b)
+	.leaflet-map-pane .leaflet-popup-tip-container
+		display: none
+	.leaflet-popup_show_true
+		width: 342px
+		border-radius: 8px
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4)
+		&:after
+			content: ''
+			position: absolute
+			bottom: -5px
+			left: 50%
+			+trx(-50%)
+			+arr(10, 5, #fff, b)
+	.leaflet-popup-content-wrapper
+		width: 342px
+		max-height: 400px!important
+		background-color: #FFF
+		padding: 12px 12px 0
+		color: #000
+		border-radius: 8px
+		+rl
+// -------------------------------------
+#mapPharmacy
+	width: 100%
+	height: 560px
+	border-radius: 8px
+	.leaflet-zoom-animated
+		fill: rgba(0, 0, 0, .8)!important
+		padding-top: 10px
+	.leaflet-bottom
+		display: none
+	.dg-label
+		display: inline-block
+		top: -31px
+		width: 90px
+		white-space: nowrap
+		left: 50%
+		margin-left: -51px
+		text-align: center
+		pointer-events: none
+		&__content
+			background-color: #FFF
+			border: none
+			border-radius: 4px
+			color: $light-gray
+			box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4)
+			+rl
+			&:after
+				content: ''
+				position: absolute
+				bottom: -5px
+				left: 50%
+				+trx(-50%)
+				+arr(10, 5, #fff, b)
+	.leaflet-map-pane .leaflet-popup-tip-container
+		display: none
+	.leaflet-popup_show_true
+		width: 342px
+		border-radius: 8px
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4)
+		&:after
+			content: ''
+			position: absolute
+			bottom: -5px
+			left: 50%
+			+trx(-50%)
+			+arr(10, 5, #fff, b)
+	.leaflet-popup-content-wrapper
+		width: 342px
+		max-height: 430px!important
+		background-color: #FFF
+		padding: 12px 12px 0
+		color: $light-gray
+		border-radius: 8px
+		+rl
+	.leaflet-interactive
+		// position: relative
+		// &:after
+		// 	content: ''
+		// 	+vcenter
+		// 	width: 2px
+		// 	height: 2px
+		// 	background-color: red
+// --------------------------------------
+// #clasterFamouseMap,
+// 	.marker-cluster-small,
+// 	.marker-cluster-small > div
+// 		background-color: $n
+// 	.marker-cluster-small > div
+// 		+s(icon-car-green)
+
+#clasterMap,
+#clasterFamouseMap,
+#clasterMapPopup
+	width: 100%
+	height: 610px
+	&.mod_top
+		// margin-top: -20px
+		height: 590px
+	.marker-cluster-large,
+	.marker-cluster-medium,
+	.marker-cluster-small
+		background-color: #FFF
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4)
+
+	img[src*="here"]
+		pointer-events: none
+
+	.leaflet-zoom-animated
+		fill: rgba(0, 0, 0, .8)!important
+	.leaflet-bottom
+		display: none
+	.dg-label
+		display: inline-block
+		top: -31px
+		width: 90px
+		white-space: nowrap
+		left: 50%
+		margin-left: -51px
+		text-align: center
+		&__content
+			background-color: #FFF
+			border: none
+			border-radius: 4px
+			color: $light-gray
+			box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4)
+			+rl
+			&:after
+				content: ''
+				position: absolute
+				bottom: -5px
+				left: 50%
+				+trx(-50%)
+				+arr(10, 5, #fff, b)
+	.leaflet-map-pane .leaflet-popup-tip-container
+		display: none
+	.leaflet-popup_show_true
+		width: 342px!important
+		border-radius: 8px
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4)
+		&:after
+			content: ''
+			position: absolute
+			bottom: -5px
+			left: 50%
+			+trx(-50%)
+			+arr(10, 5, #fff, b)
+	.leaflet-popup-content-wrapper
+		width: 342px!important
+		max-height: 400px!important
+		background-color: #FFF
+		padding: 12px 12px 0
+		color: $light-gray
+		border-radius: 8px
+		+rl
+	.dg-popup_hidden_true
+		display: block
+//  ----------- --------------------------
+#clasterMapPopup
+	height: 680px
+	margin-left: -40px
+	width: calc(100% + 80px)
+	border-radius: 0 0 10px 10px
+
+#popapPharmacy01,
+#popapPharmacy02
+	display: none
+	.expectancy__text
+		will-change: all
+		-webkit-font-smoothing: antialiased
+		text-shadow: none
+
+
+.popapPharmacy
+	&__title
+		color: $light-gray !important
+		display: inline-block
+		border-bottom: 1px solid #000
+		font-size: 17px
+		margin-bottom: 10px
+		+rm
+	&__desc
+		font-size: 13px
+		color: $gray
+		+rl
+	&__price
+		font-size: 17px
+		color: $light-gray
+		margin: 10px 0 15px !important
+		+rb
+	&__strong
+		font-size: 15px
+		color: $light-gray
+		+rb
+	&__btns
+		display: flex
+		justify-content: space-between
+		margin: 15px 0 10px
+		a
+			+box
+		.pharmacy__delivery
+			color: $green
+			&:hover
+				color: #fff
+		.pharmacy__getSelf
+			color: $light-gray
+	&__link
+		display: inline-block
+		font-size: 13px
+		color: $gray !important
+		border-bottom: 1px dotted $gray
+		margin-bottom: 10px
+		+rl
+		+tr(.4s)
+		&:hover
+			border-color: $n
+//  -----------------------------
+
+.ui-slider .ui-slider-handle
+	width: 18px
+	height: 18px
+	background-color: #FFF
+	border-radius: 18px
+	margin-left: 0px
+	+vcenter
+	outline: none
+	cursor: pointer
+	&:after
+		content: ''
+		position: absolute
+		top: 3px
+		left: 3px
+		right: 3px
+		bottom: 3px
+		background-color: $green
+		border-radius: 12px
+
+.ui-slider-horizontal
+	width: 160px
+	height: 4px
+	// background-color: $green
+	// background-color: #d9d9d7
+	border-radius: 4px
+	position: relative
+	&:after
+		content: ''
+		content: '\041C' // coment for e_tov_subcategory_list.html
+		position: absolute
+		top: 50%
+		+try(-50%)
+		right: -106px
+		font-size: 13px
+		text-transform: lowercase
+		color: $gray
+		+rl
+
+	.ui-slider-range
+		top: 0
+		height: 100%
+		background-color: $green
+	.ui-slider-range-min
+		left: 0
+	.ui-slider-range-max
+		right: 0
+		// border-radius: 4px
+		// +gh(#d2d2d0, #d7d6d4)
+
+// .ui-widget-header
+.ui-slider-range-min
+	background-color: $green
+.ui-widget-content
+	background-color: #d9d9d7
+.ui-datepicker
+	margin-top: 5px
+//  -----------------------------
+
+.simpleList
+	font-size: 0
+	&__list
+		position: relative
+		padding-left: 20px
+		margin-bottom: 15px
+		&:before
+			content: ''
+			position: absolute
+			top: 6px
+			left: 0
+			width: 6px
+			height: 6px
+			background-color: $green
+			border-radius: 100%
+		&:last-child
+			margin-bottom: 5px
+	&__link
+		display: inline
+		font-size: 17px
+		line-height: 1.3
+		color: $light-gray
+		border-bottom: 1px solid $light-gray
+		+rm
+		+tr(.4s)
+		&:hover
+			border-color: $n
+//  --------------------------
+
+.main
+	position: relative
+	margin-top: 25px
+	padding-bottom: 40px
+	border-bottom: 1px solid #edecea
+	+clr
+	+r(650)
+		margin-top: 10px
+	.expectancy__title
+		// max-width: calc(100% - 125px)
+		max-width: 100%
+	.market .assortment__header
+		padding-top: 0px
+	.aside
+		width: 260px
+	.more
+		margin-bottom: 0
+
+.aside-clear
+	float: right
+	width: calc(100% - 280px)
+	+clr
+	.dictionary
+		flex-direction: column
+		padding: 15px 0 20px
+		margin-bottom: 20px
+
+.aside
+	position: relative
+	// background-color: #FFF
+	width: 300px
+	float: left
+	margin-right: 20px
+	// overflow: hidden
+	+r(700)
+		display: none // for e_tov_subcategory.html
+		padding-top: 10px
+	&.aside_nav
+		+r(700)
+			display: inline-block//for p_one_apteka_accii.html
+	&.is_active
+		position: absolute
+		top: -50px
+		left: 10px
+		right: 10px
+		width: calc(100% - 20px)
+		margin: 0
+		z-index: 20
+		.show-mobile
+			display: block
+	&.get-right
+		float: right
+		margin: 0 0 0 20px
+		background-color: $n
+		overflow: visible
+		+clr
+		+r(800)
+			display: none
+		.aside__box
+			background-color: #FFF
+			margin-bottom: 10px
+			border-bottom: none
+			padding: 30px
+		.title__box
+			margin-bottom: 20px
+	&-toggler
+		width: 100%
+		background-color: #FFF
+		height: 40px
+		margin-top: 20px
+		padding: 10px 0
+		text-align: center
+		display: none
+		+r(700)
+			display: block
+	&__item
+		width: 100%
+		background-color: #FFF
+		border-radius: 20px
+		// box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+		// border-radius: 8px
+		// overflow: hidden
+		+r(800)
+			border-radius: 0
+		&.mod_hidden
+			overflow: hidden
+	&__link
+		display: block
+		padding: 16px 20px
+		font-size: 15px
+		color: $light-gray
+		+rr
+		+tr(.4s)
+		&:not(:last-child)
+			border-bottom: 1px solid $border
+		&:hover,
+		&.is_active
+			background-color: $greenHover
+			+rm
+	&__desc
+		font-size: 15px
+		color: $light-gray
+		+rr
+		b
+			+rb
+	&__conteiner
+		padding: 10px 10px 10px 40px
+		background-color: $grayHover
+		border-radius: 0 20px 20px 0
+		border: 1px solid $border
+
+	&__box
+		padding: 20px
+		border-bottom: 1px solid $body
+		&.mod_flex
+			display: flex
+			align-items: center
+			justify-content: space-between
+	&__search
+		width: 100%
+		height: 30px
+		padding: 0 20px
+		font-size: 13px
+		color: #000
+		border: none
+		outline: none
+		border-radius: 30px
+		+rl
+		+inputsdw
+		+placeholder
+			color: $gray
+
+	.limit
+		padding-left: 30px
+		&:after
+			right: auto
+			left: 0px
+			+s(icon-limit-small)
+			+tr(.4s)
+	.is_open
+		.limit:after
+			transform: rotate(-90deg)
+	.ui-slider-horizontal:after
+		content: none
+	.check
+		display: block
+		margin-bottom: 10px
+		padding-right: 70px
+	.roll
+		position: absolute
+		top: 2px
+		right: 0
+		font-weight: normal
+		color: $gray
+		font-size: 13px
+		border-bottom: 1px dotted $gray
+		line-height: 1.1
+		cursor: pointer
+		+rl
+		&:hover
+			border-color: $n
+	.hash__link
+		border-bottom-style: solid
+	.order__form
+		flex-wrap: wrap
+		margin-top: 20px
+	.order__form,
+	.order__fieldset
+		width: 100%
+	.btn__small
+		width: 100%
+		border: none
+		margin-top: 0
+	.mod_inline
+		display: inline-block
+		width: auto
+	.btn-toggle
+		color: $gray
+		border-color: $gray
+	.icon-close
+		display: none
+		position: absolute
+		top: 10px
+		right: 10px
+		+r(700)
+			display: inline-block
+
+	.mod_tall
+		margin-top: 40px
+	.simpleList
+		&__list
+			padding-left: 10px
+			&:before
+				width: 3px
+				height: 3px
+			&.is_active
+				.simpleList__link
+					+rb
+		&__link
+			font-size: 15px
+			+rr
+	.pharmacy__desc
+		strong
+			font-size: 17px
+			color: $light-gray
+			+rm
+	.info__title
+		+rr
+		b
+			font-weight: bold
+
+.curtail
+	display: none
+	margin-left: 30px
+	padding-top: 10px
+
+	// height: 0
+	// overflow: hidden
+
+.side
+	&__subtitle
+		padding-left: 40px
+		margin-bottom: 15px
+		font-size: 13px
+		color: $gray
+		+rl
+
+// ---------------------------------
+.accord
+	font-size: 0
+	&__item
+		&.is_open
+			.accord__title
+				border-color: $n
+			.accord__sublist
+				transform: rotateX(0deg)
+				height: auto
+				margin-top: 10px
+				+tr(.4s)
+	&__title
+		font-size: 15px
+		line-height: 40px
+		color: $light-gray
+		border-bottom: 1px solid $light-gray
+		+rm
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	&__sublist
+		font-size: 0
+		transform-origin: top center
+		transform: rotateX(90deg)
+		height: 0
+
+	&__subitem
+		position: relative
+		padding-left: 15px
+		margin-bottom: 13px
+		&:before
+			content: ''
+			position: absolute
+			top: 6px
+			left: 0
+			width: 3px
+			height: 3px
+			background-color: $green
+			border-radius: 100%
+	&__link
+		font-size: 13px
+		line-height: 1.4
+		color: $light-gray
+		border-bottom: 1px solid $light-gray
+		+rr
+		+tr(.4s)
+		&:hover
+			border-color: $n
+
+// ---------------------------------------
+.gotcha
+	display: none
+	position: absolute
+	top: -10px
+	left: 112%
+	padding: 10px 16px 10px
+	background-color: $sun
+	color: $light-gray
+	text-transform: uppercase
+	border-radius: 0 40px 40px 0 !important
+	white-space: nowrap
+	font-size: 13px
+	z-index: 100
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+	+ub
+	&:after
+		content: ''
+		position: absolute
+		top: -9px
+		left: -25px
+		+s(icon-attr)
+	&:hover
+		background-color: $yellow
+		&:after
+			+s(icon-attr-hover)
+	&.is_active
+		display: block
+	b
+		display: inline-block
+		vertical-align: top
+		margin-left: 5px
+		font-weight: normal
+		+rr
+// -----------------------------------------
+
+.filter
+	&__item
+		display: inline-block
+		height: 30px
+		width: 84px
+		border: none
+		outline: none
+		border-radius: 30px
+		text-align: center
+		font-size: 13px
+		color: $light-gray
+		+rr
+		+inputsdw
+.filterSlider
+	margin-top: 13px
+	display: block
+	width: 100%
+//  ----------------------------------------------
+
+.alphabet
+	font-size: 0
+	margin-top: 10px
+	&.no_underline
+		.alphabet
+			&__link
+				border: none
+
+				// padding: 0
+	&__list
+		display: inline-block
+		margin: 8px 8px 8px 0
+	&__link
+		text-transform: uppercase
+		padding: 0 2px
+		// letter-spacing: -.002em
+		color: $light-gray
+		font-size: 18px
+		line-height: 20px
+		+rr
+		+tr(.4s)
+		&:hover
+			color: $green
+	&.col
+		column-count: 7
+		column-width: auto
+		column-gap: 0
+		column-rule: none
+		+r(650)
+			column-count: auto
+
+.dictionary
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	color: $light-gray
+	border-bottom: 1px solid #e8e8e8
+	padding-bottom: 10px
+
+	&__title
+		font-size: 18px
+		line-height: 20px
+		color: $light-gray
+		margin-bottom: 10px
+		+rl
+	&__wrap
+		&.mod_flex
+			.alphabet
+				display: flex
+				justify-content: space-between
+				&__list
+					margin: 0px 0px 20px 0
+				// &__link
+	.alphabet
+		margin: 2px 0 0
+		&__list
+			margin-top: 0
+			margin-bottom: 15px
+			&:last-child
+				margin-right: 0
+		&__link
+			border-bottom: 1px solid #9b9b9a
+			line-height: 1
+			+rm
+			&:hover
+				border-color: $n
+		// &.mod_near
+		// 	.alphabet
+		// 		&__link
+		// 			margin: 0
+// -------------------------------------------------
+
+.twain
+	display: none
+	font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		width: 49%
+		margin-top: 20px
+		margin-bottom: 5px
+		&:nth-of-type(odd)
+			margin-right: 2%
+	&__link
+		font-size: 15px
+		color: $light-gray
+		+rm
+		+tr(.4s)
+		&:hover
+			color: $green
+
+// ---------------------------------------------------
+
+.market
+	border-radius: 8px
+	overflow: hidden
+	background-color: #FFF
+	padding: 0 40px
+	&.section__inner  // commit for  e-tov-e-sub.htm
+		padding: 28px 40px
+		+r(800)
+			padding: 28px 20px
+	// &.section__inner  // old vers commit for  e-tov-e-sub.htm
+	// 	padding: 28px 40px 0
+	.title__popular
+		margin-bottom: 0
+
+	.expectancy
+		&__content
+			width: 100%
+		// &__title
+		// 	+r(800)
+		// 		max-width: none
+		// &__text
+		// 	margin-left: 110px
+	.assortment
+		&__item
+			background-color: #FFF
+			padding: 23px 0
+			+ .title__popular
+				margin-top: 25px
+			+r(650)
+				flex-wrap: wrap
+			&.mod_center
+				align-items: center
+				justify-content: space-between
+				padding: 15px 0
+				.pharmacy__price_desc
+					white-space: nowrap
+					margin-left: 10px
+				.expectancy__content
+					width: 40%
+		&__header
+			padding: 30px 0px 15px
+			+r(800)
+				display: flex
+				align-items: center
+				justify-content: space-between
+			&_link
+				+r(800)
+					margin: 0
+			&.mod_small
+				.selectors
+					justify-content: flex-start
+					+r(950)
+						justify-content: space-around
+				.selector
+					&:not(:first-child)
+						margin-left: 10px
+						+r(600)
+							margin-left: 0
+		&__cost
+			width: 210px
+			height: 100%
+			flex-direction: column
+			align-items: flex-end
+			+r(650)
+				width: 100%
+				align-items: center
+				flex-direction: row-reverse
+				margin-top: 10px
+		&__price
+			margin-bottom: 20px
+			+r(650)
+				margin-bottom: 0
+// --------------------------------------------------
+
+.wideSlick
+	width: 100%
+	position: relative
+	overflow: hidden
+	border-radius: 8px
+	&__item
+		background-color: #FFF
+	// .goods
+	&__prev,
+	&__next
+		position: absolute
+		top: 50%
+		margin-top: 25px
+		+hide-text
+		height: 30px
+		width: 30px
+		border-radius: 30px
+		border: 2px solid #edecea
+		background: #fff
+		left: -15px
+		z-index: 1
+		+tr(.4s)
+		+r(800)
+			left: 0
+		&:hover
+			// opacity: .8
+			border-color: $light-gray
+		&:focus
+			outline: none
+		&.slick-disabled
+			opacity: 0.2
+		&:before
+			content: ""
+			+vcenter
+			+s(slide-prev)
+	&__next
+		right: -15px
+		left: auto
+		+r(800)
+			left: auto
+			right: 0
+		&:before
+			content: ""
+			display: inline-block
+			+s(slide-next)
+	.slick-list
+		border-radius: 8px
+// -----------------------------------------------------
+
+.goods
+	padding: 15px 20px 30px
+	border-right: 1px solid #edecea
+	text-align: center
+	&__pic
+		position: relative
+		width: 100%
+		height: 120px
+		overflow: hidden
+	&__img
+		+vcenter
+		max-height: 100%
+		max-width: 100%
+	&__title
+		margin-bottom: 10px
+	&__link
+		font-size: 15px
+		color: $light-gray
+		line-height: 1
+		border-bottom: 1px solid $light-gray
+		outline: none !important
+		+rm
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	&__price
+		margin-bottom: 20px
+		font-size: 15px
+		color: $light-gray
+		+rb
+	&__btn
+		display: inline-block
+		width: 134px
+		height: 40px
+		background-color: $yellow
+		text-transform: uppercase
+		font-size: 13px
+		color: $light-gray
+		line-height: 40px
+		text-align: center
+		border-radius: 40px
+		+ub
+		+tr(.4s)
+		&:hover
+			opacity: .8
+// -----------------------------------------------------
+
+.entry
+	text-align: center
+	font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		text-align: left
+		width: 30%
+		margin-right: 5%
+		+r(650)
+			width: 100%
+			margin-right: 0
+			margin-bottom: 20px
+		&:last-child
+			margin-right: 0
+			margin-bottom: 0
+	&__header
+		margin-bottom: 14px
+		time
+			font-size: 13px
+			color: $gray
+			+rl
+	&__title
+		margin-bottom: 10px
+		&_link
+			color: $light-gray
+			font-size: 15px
+			line-height: 20px
+			border-bottom: 1px solid $light-gray
+			margin-bottom: 5px
+			+rm
+			+tr(.4s)
+			&:hover
+				border-color: $n
+	// &__text
+	&__desc
+		font-size: 13px
+		line-height: 20px
+		+rl
+//  ------------------------------------------------
+
+.tab
+	position: relative
+	display: block
+	font-size: 0
+	z-index: 20
+	+r(800)
+		width: calc(100% - 40px)
+		margin-left: 20px
+	+ *
+		border-top-right-radius: 0px
+		border-top-left-radius: 0px
+	&__list
+		text-align: center
+		display: inline-block
+		vertical-align: top
+		width: calc(25% - 3px)
+		margin-right: 4px
+		overflow: hidden
+		&:last-child
+			margin-right: 0
+		+r(800)
+			width: 100%
+			margin-right: 0
+		&.is_active
+			display: inline-block
+			+r(800)
+				position: relative
+				width: 100%
+				margin-right: 0
+				height: auto
+				&:after
+					content: ""
+					position: absolute
+					top: 50%
+					right: 10px
+					+s(icon-tab-bird)
+					+try(-50%)
+			.tab__link
+				background-color: #FFF
+				color: $light-gray
+				padding: 0 20px
+				height: 50px
+				&:after
+					content: none
+				+r(800)
+					background-color: $green
+					color: #fff
+			span
+				display: inline-block
+				margin: 0 10px
+				+ub
+		&.is_add
+			.tab__link
+				border: 1px solid $border
+				padding: 0 2px
+				background-color: #FFF
+				+r(800)
+					border: 0
+					padding: 0 8px
+			span
+				display: inline-block
+				+ub
+	&__link
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 50px
+		background-color: $green
+		//line-height: 50px//commnent if flexbox p-one-apteka-tovary.htm
+		border-radius: 8px 8px 0 0
+		color: #fff
+		text-transform: uppercase
+		font-size: 13px
+		cursor: pointer
+		+ub
+		+tr(.4s)
+		+r(800)
+			height: 0
+			padding: 0
+			background-color: #fff
+			color: $light-gray
+			justify-content: flex-start
+			// padding: 0 20px
+			// border-radius: 0
+		&:after
+			content: ''
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+			height: 5px
+			box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+		&.mod_white
+			background-color: #FFF
+		&.is_shown
+			+r(800)
+				padding: 0 20px
+				height: 50px // comment to p-stats.html
+
+		.check input:checked ~ span:after
+			bottom: 6px
+	&__btn
+		display: inline-block
+		height: 30px
+		padding: 0 10px
+		color: $green
+		text-transform: uppercase
+		border: 2px solid $green
+		outline: none
+		border-radius: 30px
+		font-size: 13px
+		background-color: #FFF
+		+ub
+		+r(640)
+			width: 100%
+
+	&_wide
+		display: flex
+		+r(800)
+			display: block
+		.tab__list
+			flex: 1 1 auto
+	&_inner
+		// display: inline-block
+		flex: 0 1 530px
+		vertical-align: top
+		+r(800)
+			flex: 0 1 auto
+			margin: 0
+			width: 100%
+
+		+ .description__break
+			display: flex
+			align-items:  center
+			justify-content: space-between
+			height: 40px
+			overflow: visible
+			flex: 0 1 300px
+			transform: rotateY(0deg)
+			white-space: nowrap
+			vertical-align: top
+			+r(960)
+				margin-top: 20px
+				margin-left: 0
+			span
+				white-space: nowrap
+				display: flex
+				margin-right: 10px
+				+r(650)
+					width: 50%
+			.description__fieldset
+				margin: 5px 0 0 10px
+
+
+	&_inner &
+		&__list
+			width: 125px
+			height: 40px
+			margin-right: 10px
+			+r(800)
+				margin: 0 5px 10px
+			+r(640)
+				width: 100%
+			&:last-child
+				margin-right: 0
+			&.is_active
+				position: relative
+				overflow: visible
+				height: 40px
+				&:after
+					content: ''
+					position: absolute
+					left: 50%
+					bottom: -5px
+					+arr(8, 5, #000, b)
+					+trx(-4px)
+					+r(800)
+						content: none
+				.tab__link
+					border-color: $light-gray
+					height: 40px
+
+		&__link
+			background-color: #FFF
+			height: 40px
+			border: 2px solid #d6d6d6
+			border-radius: 40px
+			color: $light-gray
+			box-shadow: none
+			white-space: nowrap
+			justify-content: center
+			+r(800)
+				padding: 0 20px
+			&:after
+				content: none
+			&.is_shown
+				height: 40px
+
+//  --------------------------------------------------
+
+.detail
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 40px 20px 40px 40px
+	background-color: #FFF
+	+r(650)
+		flex-wrap: wrap
+
+	&__header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-bottom: 18px
+		margin-bottom: 15px
+		border-bottom: 1px solid $body
+		.drugstore__price
+			font-size: 24px
+			color: $light-gray
+			+rb
+	&__conteiner
+		display: flex
+		flex-direction: column
+		flex: 0 1 60%
+		+r(650)
+			flex: 1 1 100%
+			margin-bottom: 20px
+
+	&__buy
+		border-bottom: 1px solid $body
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		padding-bottom: 27px
+		margin-bottom: 27px
+		// +r(420)
+			// justify-content: center
+	&__price
+		white-space: nowrap
+		font-size: 24px
+		color: $light-gray
+		+rb
+	&__desc
+		font-size: 15px
+		line-height: 20px
+		color: $light-gray
+		margin-bottom: 5px
+		+rl
+	&__list
+		font-size: 0
+	&__item
+		display: inline-block
+		width: 49%
+		vertical-align: top
+		margin-bottom: 15px
+		&:nth-of-type(2n)
+			margin-left: 2%
+	.btn__buy
+		+r(900)
+			flex: 1 1 100%
+			margin-top: 15px
+	.share
+		margin-top: auto
+		padding-top: 10px
+	b, strong
+		font-weight: bold
+// -----------------------------------------------------
+
+.service
+	display: flex
+	align-items: center
+	justify-content: space-between
+	flex-wrap: wrap
+	padding-bottom: 18px
+	margin-bottom: 20px
+	border-bottom: 1px solid $body
+	&__link
+		position: relative
+		display: flex
+		color: $light-gray
+		line-height: 1
+		align-items: center
+		+rl
+		+tr(.4s)
+		+r(650)
+			margin: 5px 0
+		&:hover
+			span
+				border-bottom: 1px dotted #000
+		&.active-gray
+			&.is_active
+				span
+					color: #c4c4c4
+		&.is_active
+			.icon-heart-cell
+				+s(icon-heart-cell-big)
+			.icon-online
+				+s(icon-offline)
+			.icon-car-green
+				+s(icon-car)
+			.icon-accii-active
+				+s(icon-accii)
+
+		&.is_disable
+			opacity: .4
+			cursor: default
+			span
+				border-bottom: 1px solid $n
+		&.mod-online
+			padding-left: 18px
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 2px
+				+s(icon-online)
+		span
+			display: inline-flex
+			margin-left: 8px
+			border-bottom: 1px dotted $n
+			+tr(.4s)
+
+//  --------------------------------------------------
+
+.picture
+	display: flex
+	flex: 1 1 auto
+	height: 270px
+	margin-left: 4%
+	+r(800)
+		height: 320px
+	+r(650)
+		width: 100%
+		height: auto
+		margin: 0
+	&__wrap
+		width: 80px
+		margin-left: 10px
+		max-height: 270px
+		+r(800)
+			width: 100%
+			max-height: 100%
+		+r(650)
+			margin-left: 0
+			max-height: none
+
+	&__pic
+		display: block
+		position: relative
+		border: 1px solid $body
+		position: relative
+		background-color: #FFF
+		img
+			+vcenter
+			// width: 96%
+			max-width: 96%
+			max-height: 96%
+			height: auto
+	&_big
+		height: 270px
+		width: calc(100% - 84px)
+		border-radius: 6px
+		+r(800)
+			display: none
+	&_small
+		width: 60px
+		height: 60px
+		border-radius: 4px
+		margin-bottom: 10px
+		opacity: .6
+		// border: 2px solid $n
+		+tr(.4s)
+		+r(800)
+			width: 100%
+			height: auto
+			padding-top: 60%
+			min-height: 10px
+		+r(650)
+			width: 80px
+			height: 80px
+			float: left
+			// height: 200px
+			padding-top: 0
+			opacity: 1
+			margin-right: 10px
+		// &:nth-of-type(2n)
+		// 	+r(650)
+		// 		margin-left: 4%
+
+		&.is_active
+			opacity: 1
+//  --------------------------------------------------
+
+.drugstore
+	padding: 20px 0 0 40px
+	background-color: #FFF
+	height: 610px
+	+clr
+	+r(800)
+		height: auto
+		padding: 25px 20px
+	&.mod_autoheight
+		height: auto
+		padding-bottom: 25px
+		padding-top: 0
+	&.mod_correct
+		height: 720px
+		padding-top: 0
+		+r(800)
+			height: auto
+			padding: 0px 20px 25px
+		#clasterMap,
+		#clasterFamouseMap
+			height: 720px
+		.drugstore__places
+			max-height: 640px
+			// max-height: 610px //if sortable
+			// margin-top: 0
+	&__top
+		width: 48%
+		float: left
+		padding-right: 4%
+		+r(800)
+			float: none
+			width: 100%
+			padding: 0
+	&__bottom
+		float: left
+		width: 48%
+		padding-right: 4%
+		+r(800)
+			float: none
+			width: 100%
+			padding: 0
+	&__map
+		float: right
+		width: 52%
+		// margin-top: -20px
+		+r(800)
+			float: none
+			width: calc(100% + 40px)
+			margin-top: 20px
+
+
+	&__header
+		display: flex
+		justify-content: space-between
+		.section__strong
+			margin-top: 5px
+	&__search
+		border-bottom: 1px solid $body
+		padding-bottom: 16px
+		&_input
+			width: 100%
+			height: 40px
+			border-radius: 40px
+			line-height: 40px
+			border: none
+			outline: none
+			padding: 0 20px
+			margin-bottom: 20px
+			font-size: 13px
+			color: #000
+			+inputsdw
+			+placeholder
+				color: $gray
+		.check
+			margin-right: 40px
+			+r(400)
+				margin-bottom: 10px
+	&__item
+		padding: 18px 0
+		margin-right: 40px
+		border-bottom: 1px solid $body
+		+r(800)
+			margin-right: 10px
+			&:last-of-type
+				border: none
+		&.mod_flex
+			display: flex
+			align-items: center
+			justify-content: space-between
+			+r(650)
+				flex-direction: column// add for e_my_apteki.html
+				margin-right: 0
+		&.is_removed
+			justify-content: flex-end
+			.expectancy__content,
+			.el-dell
+				display: none
+			.assortment__reestablish
+				display: flex
+				justify-content: flex-end
+				align-items: center
+				margin-right: 20px
+				background-color: $n
+				+r(650)
+					margin-right: 0
+				&_desc
+					display: inline-block
+				&_link
+					@extend .el-dell
+					display: block
+					padding-left: 55px
+					text-transform: none
+					+rl
+					+r(650)
+						margin-top: 0
+						padding-left: 15px
+		.expectancy__content
+			display: inline-block
+			width: calc(100% - 210px)
+			+r(650)
+				width: 100%
+		.assortment__reestablish
+			width: 100%
+			height: auto
+			text-align: left
+			border: none
+	&__price
+		@extend .goods__price
+		display: inline-block
+		margin-bottom: 0
+		// order: -1
+	&__cost
+		display: flex
+		align-items: center
+		// justify-content: space-between del for /e_tov_opisanie.html
+		padding-top: 15px
+		+r(400)
+			flex-direction: column
+	&__places
+		margin-top: 20px
+		margin-right: -10px
+		overflow: hidden
+		max-height: 320px
+		.mCSB_container
+			padding-right: 0px
+		&.mod_height
+			max-height: 590px
+		.btn__gray
+			margin-top: 30px
+		.check
+			vertical-align: top
+			margin-top: 4px
+	.btn__buy
+		margin: 10px 30px 10px 0
+	.assortment
+		&__header
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-bottom: 15px
+			&_link
+				margin: 0
+				// &.is_active
+				// 	margin-left: 20px
+	.expectancy__text
+		position: relative
+		+ .check
+			margin-top: 10px
+	.expectancy__title
+		width: calc(100% - 164px) //e-tov-e-opisanie.html
+		max-width: 100%
+		+r(800)
+			width: calc(100% - 164px)
+			max-width: 100%
+		+r(650)
+			width: calc(100% - 164px)
+			max-width: 100%
+// -----------------------------------------------------
+.distance
+	position: absolute
+	right: 0
+	top: 5px
+	font-size: 13px
+	color: $gray
+	+rl
+.inform
+	width: 100%
+	margin: 10px 0px
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin-right: 30px
+		white-space: nowrap
+		i
+			margin-right: 5px
+		p,
+		a
+			display: inline-block
+			font-size: 15px
+			line-height: 20px
+			color: $light-gray
+			+rl
+// --------------------------------------------
+
+.limit
+	position: relative
+	margin-right: 30px
+	cursor: pointer
+	&:after
+		content: ''
+		position: absolute
+		bottom: 6px
+		right: -30px
+		transform: rotate(0deg)
+		+s(icon-limit-bird)
+		+tr(.4s)
+// ---------------------------------------
+.hash
+	position: relative
+	overflow: hidden
+	height: 50px
+	+tr(6s)
+	&:after
+		content: ''
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		height: 5px
+		box-shadow: 0 0 20px 16px rgba(255, 255, 255, .8)
+	&.is_open
+		height: auto
+		&:after
+			content: none
+	&__link
+		display: inline-block
+		margin-right: 20px
+		color: $green
+		border-bottom: 1px dotted $green
+		font-size: 13px
+		line-height: 1
+		margin-bottom: 10px
+		+rl
+		+tr(.4s)
+		&:hover
+			border-color: $n
+		&.mod_big
+			font-size: 17px
+		&.mod_biggest
+			font-size: 15px
+			+rm
+
+	&__slide
+		display: inline-block
+		color: $gray
+		border-bottom: 1px dotted $gray
+		font-size: 13px
+		line-height: 1
+		+rl
+		+tr(.4s)
+		&:hover
+			border-color: $n
+// ---------------------------------------------
+
+.indications
+	margin-top: 15px
+	&__desc
+		font-size: 15px
+		line-height: 20px
+		color: $light-gray
+		margin-bottom: 15px
+		+rl
+	&__pic
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+	&__link
+		display: inline-block
+		margin: 0 5pxl
+
+// ----------------------------------------------------
+
+.back
+	display: inline-block
+	position: relative
+	margin-left: 50px
+	font-size: 15px
+	color: $light-gray
+	border-bottom: 1px solid $light-gray
+	+tr(.4s)
+	+rl
+	+r(650)
+		width: 80%
+		border-bottom: none
+		margin-left: 25px
+		text-decoration: underline
+	&:before
+		content: ''
+		position: absolute
+		bottom: 5px
+		left: -25px
+		+s(icon-arrow-left)
+		+tr(.4s)
+	&:hover
+		border-color: $n
+		+r(650)
+			text-decoration: none
+		&:before
+			left: -30px
+// --------------------------------------------------
+
+.comment
+	border-top: 1px solid $body
+	&:nth-of-type(1)
+		border-top: none
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-bottom: 15px
+		width: 76%
+		+r(900)
+			width: 100%
+			flex-wrap: wrap
+		+r(650)
+			flex-direction: column
+		.title__popular
+			margin-bottom: 0
+			span
+				display: inline-block
+				margin-left: 10px
+				color: $gray
+				+rr
+		.btn__small
+			margin-top: 0
+		// 	height: 40px
+		// 	width: 166px
+		// 	background-color: $yellow
+		// 	text-transform: uppercase
+		// 	line-height: 40px
+		// 	border-radius: 40px
+		// 	font-size: 13px
+		// 	text-align: center
+		// 	color: $light-gray
+		// 	+rb
+		// 	+tr(.4s)
+		// 	&:hover
+		// 		opacity: .8
+	&__val
+		display: flex
+		align-items: center
+		+r(650)
+			margin: 10px 0
+		p
+			display: inline-block
+			margin-right: 15px
+			font-size: 13px
+			+rl
+	&__status,
+		display: inline-block
+		margin-left: 30px
+		font-size: 13px
+		color: $green
+		+rl
+		&.mod_moderation
+			color: $gray
+	&__link
+		display: inline-block
+		font-size: 13px
+		color: $green
+		border-bottom: 1px solid $green
+		+rl
+		+tr(.4s)
+		&:hover
+			border-color: $n
+
+	&__header
+		padding-top: 20px
+		+clr
+	&__pic
+		position: relative
+		width: 40px
+		height: 40px
+		border-radius: 40px
+		overflow: hidden
+		float: left
+		margin-right: 10px
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+	&__user
+		float: left
+		// margin-left: 10px
+		&_title
+			font-size: 15px
+			color: $light-gray
+			+rm
+		&_desc
+			font-size: 13px
+			line-height: 20px
+			margin: 5px 0
+			color: $gray
+			+rl
+	&__content
+		padding: 12px 0 20px
+	&__overlay
+		width: 90%
+		max-width: 784px
+		position: fixed
+		top: 50%
+		left: 50%
+		transform: translate( -50%, -50%)
+		background-color: #FFF
+		padding: 30px 40px 40px
+		z-index: 1200
+		+r(650)
+			padding: 30px 20px 30px
+		&_title
+			font-size: 24px
+			margin-bottom: 20px
+			color: $light-gray
+			+rr
+		&_name
+			font-size: 16px
+			line-height: 20px
+			color: $light-gray
+			+rb
+		&_agree
+			font-size: 13px
+			line-height: 20px
+			color: $light-gray
+			+rr
+			em
+				font-style: italic
+			a
+				font-size: 13px
+				line-height: 20px
+				color: $light-gray
+				+rr
+				font-style: italic
+				border-bottom: 1px solid $light-gray
+				+tr(.4s)
+				&:hover
+					border-color: $n
+		.btn
+			display: inline-block
+			font-size: 13px
+			line-height: 40px
+			text-transform: uppercase
+			color: #000
+			text-align: center
+			height: 40px
+			padding: 0 24px
+			background-color: $yellow
+			border-radius: 40px
+			margin-top: 25px
+			+ub
+			+tr(.4s)
+			&:hover
+				opacity: .7
+		.icon-close
+			position: absolute
+			top: 20px
+			right: 40px
+			+tr(.4s)
+			&:hover
+				+scale(.8)
+			+r(650)
+				right: 20px
+	&__textarea
+		width: 100%
+		height: 100px
+		border-radius: 20px
+		padding: 15px 20px
+		margin-bottom: 15px
+		margin-top: 10px
+		resize: none
+		+inputsdw
+		border: none
+		outline: none
+		+placeholder
+			font-size: 13px
+			line-height: 20px
+			color: $gray
+			+rr
+a.comment__user_title
+	border-bottom: 1px solid #000
+	margin-bottom: 2px
+	+tr(.4s)
+	&:hover
+		border-color: $n
+// -------------------------------------
+
+.stars
+	margin: 12px 0 0
+// --------------------------------------------------------
+
+.sortable
+	border-top: 1px solid $body
+	border-bottom: 1px solid $body
+	padding: 16px 0
+// ---------------------------------------------------
+.column__list
+	font-size: 0
+	border-top-right-radius: 8px
+	.simpleList__list
+		display: inline-block
+		width: calc(50% - 40px)
+		+r(700)
+			width: 100%
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			bottom: -15px
+			width: 1px
+			background-color: $body
+			+r(700)
+				content: none
+		&:nth-of-type(2n)
+			margin-left: 40px
+			+r(700)
+				margin-left: 0
+			&:after
+				content: none
+// --------------------------------------------------
+
+.addNewCard
+	width: 360px
+	text-align: center
+	max-width: 100%
+	.btn__small
+		border: none
+		outline: none
+		+r(650)
+			font-size: 12px
+	.select
+		width: 100%
+		margin: 0
+		border: none
+		+inputsdw
+		&:before
+			+gray
+		span
+			@extend .order__label
+			text-transform: none
+		&__list
+			top: 44px
+			border-radius: 4px
+			color: $gray
+			padding: 10px 0
+			box-shadow: inset 0 0 10px 2px rgba(0,0,0,0.1)
+// -----------------------------------------------
+
+.description
+	&__content
+		margin-bottom: 35px
+		+clr
+		&.mod_flex
+			display: flex
+			align-items: center
+			justify-content: space-between
+		.check
+			margin-left: 15px
+	&__day
+		display: inline-block
+		width: 25px
+		margin-right: 10px
+		font-size: 13px
+		color: $light-gray
+		+rr
+	&__gallery
+		text-align: center
+	&__pic
+		display: inline-block
+		width: 23%
+		height: 140px
+		margin-right: 2%
+		margin-bottom: 5px
+		position: relative
+		overflow: hidden
+		border-radius: 8px
+		&:last-child
+			margin-right: 0
+		+r(650)
+			width: 100%
+			height: 180px
+			margin-right: 0
+
+		&_btn
+			display: inline-block
+			position: absolute
+			top: -1px
+			right: -1px
+			width: 40px
+			height: 40px
+			background-color: rgba(255, 255, 255, .8)
+			+tr(.4s)
+			&:hover
+				background-color: #fff
+		.icon-remove
+			+vcenter
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+	&__form
+		&_wrap
+			margin-bottom: 10px
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+	&__fieldset
+		position: relative
+		display: inline-block
+		text-align: right
+		width: 310px
+		margin-right: 20px
+		&.input--filled
+			.description
+				&__label
+					top: 2px
+					font-size: 12px
+				&__input
+					padding-top: 15px
+				&__forget
+					position: absolute
+					bottom: 25px
+					right: 0
+					font-size: 12px
+					line-height: .8
+					color: $light-gray
+					border-bottom: 1px solid $light-gray
+					+rr
+					+tr(.4s)
+					&:hover
+						border-color: $n
+		&.mod_time
+			width: 124px
+			margin: 5px 0px 5px 10px
+			+r(900)
+				width: 41%
+				min-width: 100px
+			+r(400)
+				width: 36%
+			&.input--filled
+				.description
+					&__input
+						padding-top: 0px
+						&.has-error
+							box-shadow: none
+							border: 1px solid $red
+				#time-error
+					display: none!important
+			&.is-active
+				z-index: 1000
+			span
+				display: inline-block
+				font-size: 13px
+				color: $gray
+				line-height: 40px
+				vertical-align: top
+			.select
+				display: inline-block
+				width: 94px
+				height: 40px
+				// border: none
+				outline: none
+				margin-left: 5px
+				font-size: 13px
+				color: #000
+				// +inputsdw
+				+rr
+				&__list
+					height: auto
+					line-height: 36px
+				li
+					text-align: center
+				span
+					font-size: 13px
+					color: #000
+					line-height: 36px
+					+um
+		+ .add
+			+r(650)
+				margin: 10px 0 5px
+
+	&__input
+		width: 100%
+		height: 40px
+		border: none
+		outline: none
+		border-radius: 40px
+		padding: 0 20px
+		font-size: 13px
+		color: #000
+		+inputsdw
+		+rr
+		&.has-error
+			box-shadow: 0 0 20px 0 rgba(199, 89, 89, .6)// !important
+		+ .has-error
+			display: block
+			margin-top: 5px
+			padding-left: 20px
+			text-align: left
+			color: #c75959
+		// ~ .icon-remove
+		// 	top: 20px
+	&__label
+		position: absolute
+		top: 10px
+		left: 20px
+		font-size: 13px
+		color: #9a9a9a
+		+rr
+		+tr(.4s)
+
+	&__break
+		position: relative
+		display: inline-block
+		margin-left: 10px
+		// width: 0
+		height: 0px
+		overflow: hidden
+		transform-origin: left center
+		transform: rotateY(90deg)
+		+tr(.6s)
+		&.is_active
+			transform: rotateY(0deg)
+			height: 50px
+			overflow: visible
+			+r(800)
+				margin-left: 35px
+		&.is-break
+			z-index: 1000
+	&__textarea
+		width: 100%
+		max-width: 400px
+		height: 100px
+		border: none
+		outline: none
+		border-radius: 20px
+		+inputsdw
+		padding: 10px 20px
+		resize: none
+	&__pause
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		.description__fieldset
+			width: 103px
+			+r(500)
+				width: 100% !important
+				margin-bottom: 10px
+		.description__input
+			+r(500)
+				width: 100%
+	.icon-remove
+		top: 20px
+		right: -36px
+	&__table
+		width: 100%
+		&_tr
+			border-top: 1px solid #efefef
+			padding: 11px 20px
+			+tr(.4s)
+			&:hover
+				background-color: $grayHover
+				// .description__table_name
+			// 		color: #000
+			&.mod_green_bg
+				background-color: #e9fae1
+		&_name
+			display: inline-block
+			vertical-align: top
+			width: 190px
+			font-size: 17px
+			color: $gray
+			+rl
+			+r(400)
+				width: 100%
+		&_stats
+			display: inline-block
+			vertical-align: top
+			padding-left: 10px
+			font-size: 17px
+			color: $light-gray
+			+rm
+		.mod_price
+			position: relative
+			&:after
+				content: '\20BD'
+				font-size: 17px
+				color: $light-gray
+				margin-left: .2em
+				+rb
+	.btn
+		display: inline-block
+		height: 40px
+		border: 2px solid $green
+		color: $green
+		line-height: 36px
+		padding: 0 20px
+		text-transform: uppercase
+		border-radius: 40px
+		outline: none
+		+ub
+		+tr(.4s)
+		&:hover
+			background-color: $green
+			color: #fff
+		&__small
+			margin-right: 20px
+			margin-top: 0
+		&__dotted
+			text-transform: uppercase
+			color: $light-gray
+			border-bottom: 1px dotted $light-gray
+			+ub
+			+tr(.4s)
+			&:hover
+				border-color: $n
+
+	.order__item
+		padding-top: 0
+		border-top: none
+		+clr
+	.order__desc
+		white-space: nowrap
+		display: inline-block
+		vertical-align: top
+
+.add
+	display: inline-block
+	font-size: 13px
+	color: $light-gray
+	border-bottom: 1px dotted $light-gray
+	line-height: .9
+	margin-top: 5px
+	+rr
+	+tr(.4s)
+	&:hover
+		border-color: $n
+
+
+.leaflet-container .inform__item a
+	color: $light-gray
+
+.leaflet-container a
+	&.add
+		color: $light-gray
+
+.partner
+	width: 140px
+	display: inline-block
+	font-size: 0
+	text-align: center
+	margin-bottom: 20px
+	&__pic
+		position: relative
+		width: 140px
+		height: 90px
+		background-color: #FFF
+		border-radius: 8px
+		border: 1px solid $border
+	&__img
+		+vcenter
+		max-width: 94%
+	&__title
+		font-size: 13px
+		color: $light-gray
+		+rl
+	&__slider
+		width: calc(100% + 20px)
+		+r(1000)
+			width: 100%
+		.partner
+			margin-right: 20px
+		.slick-list
+			margin-right: 20px
+			+r(1000)
+				margin-right: 0
+
+.comun
+	text-align: center
+	font-size: 0
+	padding-bottom: 15px
+	&__btn
+		width: 222px
+		height: 50px
+		display: inline-block
+		background-color: #FFF
+		line-height: 50px
+		border-radius: 50px
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+		margin: 0 5px 10px
+		font-size: 20px
+		color: $light-gray
+		+um
+		+tr(.4s)
+
+
+.priv
+	font-size: 0
+	&.mod_line &
+		&__box
+			+r(800)
+				width: 100%
+				margin-left: 0
+				&:not(:first-of-type)
+					margin-top: 40px
+	&__box
+		vertical-align: top
+		position: relative
+		width: 23%
+		display: inline-block
+		+r(800)
+			width: 48%
+		+r(650)
+			width: 100%
+			margin-left: 0
+		&:not(:first-child)
+			margin-left: 2%
+			+r(650)
+				margin-left: 0
+				margin-top: 40px
+	&__pic
+		position: relative
+		height: 100px
+		margin-bottom: 10px
+		img
+			+vcenter
+			max-width: 100%
+			max-height: 100%
+	// &__content
+	&__desc,
+	&__link
+		font-size: 15px
+		color: $light-gray
+		+rl
+	&__link
+		display: inline-block
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+
+.blob
+	width: calc(100% - 280px)
+	padding-top: 0
+	+r(800)
+		width: calc(100% + 40px)
+	&__pic
+		float: right
+		position: relative
+		width: 170px
+		height: 170px
+		border-radius: 6px
+		overflow: hidden
+		border: none
+		margin-left: 20px
+		+r(450)
+			width: 100%
+			margin: 0 0 10px
+		&.mod_wide
+			width: 100%
+			height: 300px
+			margin: 20px 0
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+	&__link
+		font-size: 13px
+		color: $light-gray
+		text-decoration: underline
+		+rl
+		&:hover
+			text-decoration: none
+	.pharmacy__desc
+		margin-top: 10px
+		.blob__link
+			font-size: 15px
+	time
+		font-size: 13px
+	.pharmacy__link
+		margin-bottom: 10px
+		width: 100%
+	.section__inner
+		overflow: hidden
+		padding-top: 1px
+	.assortment__text
+		width: 100%
+	.share
+		margin-top: 20px
+	.title__popular
+		margin-bottom: 10px
+	.assortment__item
+		display: block
+		padding: 20px 0
+		align-items: flex-start
+		+clr
+
+.flypaper
+	.blob
+		width: calc(100% - 240px)
+	.aside
+		width: 230px
+.search-top
+	padding: 27px 0
+	border-bottom: 1px solid $border
+	background-color: #FFF
+	+ .title__popular
+		margin: 30px 0 10px 40px
+
+.description
+	// .search-top
+		// padding: 27px 20px
+		//margin: 0 20px
+	.assortment__header
+		padding: 10px 40px 0
+		margin-left: -40px
+		width: calc(100% + 80px)
+
+.changeAdress
+	display: none
+	width: 96%
+	max-width: 380px
+	background-color: #FFF
+	text-align: left
+	&.is_active
+		display: block
+	.youSure__content
+		text-align: left
+.place-link
+	text-align: left
+	border-bottom: 1px dotted $light-gray
+	font-size: 13px
+	color: $light-gray
+	+rl
+
+
+.placat
+	font-size: 0
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	+r(800)
+		justify-content: space-around
+	&__pic
+		position: relative
+	.placat__img
+		margin: 0 0 10px 0
+	.partner
+		margin: 35px 2px 20px
+		+r(650)
+			margin-bottom: 0
+		&__pic
+			margin-bottom: 15px
+
+.list
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+	+r(985)
+		justify-content: space-around
+	+r(650)
+		flex-direction: column
+		align-items: center
+	&__item
+		width: 300px
+		min-height: 150px
+		margin-top: 30px
+		+clr
+		&:not(:nth-child(3n))
+			margin-right: 15px
+		+r(400)
+			width: 280px
+			margin-right: 0 !important
+	&__header
+		border-bottom: 1px solid $border
+		margin-bottom: 20px
+	&__content
+		margin-top: 20px
+		+clr
+		+r(650)
+			display: flex
+			flex-direction: column
+			align-items: center
+	&__text
+		display: inline-block
+		width: calc(100% - 160px)
+		+r(650)
+			width: 100%
+			margin-top: 15px
+			text-align: center
+	&__name
+		margin-bottom: 15px
+		span
+			font-size: 20px
+			color: $light-gray
+			line-height: 1.2
+			border-bottom: 1px solid $light-gray
+			+rr
+	&__link
+		font-size: 15px
+		text-decoration: underline
+		color: $green
+		+rl
+		&:hover
+			text-decoration: none
+	.title__popular
+		text-transform: uppercase
+	.partner__pic
+		float: left
+		margin-right: 20px
+
+.about
+	display: flex
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+	border-radius: 8px
+	overflow: hidden
+	+r(650)
+		flex-wrap: wrap
+	#mapmini
+		width: 100%
+		margin: 0
+		+r(650)
+			margin-bottom: 15px
+	.section__inner
+		flex: 0 1 100%
+	.mod_aside
+		display: flex
+		flex-direction: column
+		flex: 0 1 100%
+		max-width: 380px
+		flex-wrap: wrap
+		border-left: 1px solid $border
+		background-color: #fdfdfd
+		+r(650)
+			max-width: 100%
+	.order__table
+		+ .title__popular
+			margin: 20px 0 0
+	.order__table_row
+		border-bottom: 1px solid $border
+	.order__table_cell
+		display: inline-block
+		vertical-align: top
+		width: 40%
+		min-width: 120px
+	.order__strong
+		display: block

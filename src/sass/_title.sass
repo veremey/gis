@@ -1,0 +1,67 @@
+.title__popular
+	font-size: 24px
+	line-height: 1.1
+	color: $light-gray
+	+rr
+	a
+		display: inline
+		color: $green
+		border-bottom: 1px solid $green
+		+tr(.4s)
+		&:hover
+			border-color: $n
+	span
+		margin-left: 10px
+		font-size: 20px
+		color: $light-gray
+		+rl
+	&.mod_selfPadding
+		padding: 40px 40px 0 40px
+	&.mod_offset
+		padding-left: 40px
+.title__box
+	font-size: 15px
+	color: $light-gray
+	+rm
+
+.title__dotted,
+.title__line
+	display: block
+	margin-bottom: 20px
+
+	&.is_open
+		.limit:after
+			transform: rotate(90deg)
+	span
+		color: $light-gray
+		font-size: 24px
+		// line-height: .9
+		line-height: 1.3
+		border-bottom: 1px dotted $light-gray
+		+rr
+.title__line
+	span
+		border-bottom: 1px solid $light-gray
+
+.title__small
+	font-size: 20px
+	line-height: 1
+	margin-bottom: 25px
+	color: $light-gray
+	+rr
+
+a.popapPharmacy__title,
+a.title__dotted,
+a.title__line
+	&:hover
+		border-color: $n
+		span
+			border-color: $n
+
+.title__error
+	font-size: 150px
+	line-height: .9
+	color: $light-gray
+	margin-bottom: 35px
+	// margin-top: 50px
+	+rl

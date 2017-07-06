@@ -1,0 +1,379 @@
++font('Roboto-Regular-webfont', 'Roboto-Regular-webfont')
++font('Roboto-Light-webfont', 'Roboto-Light-webfont')
++font('Roboto-Medium-webfont', 'Roboto-Medium-webfont')
++font('Roboto-Bold-webfont', 'Roboto-Bold-webfont')
++font('Roboto-Black-webfont', 'Roboto-Black-webfont')
+// +font('ubuntubold', 'ubuntubold')
++font('ubuntum', 'ubuntum')
+
+// =um
+// 	font-family: 'Ubuntu', sans-serif
+// 	font-weight: 500
+// =ub
+// 	font-family: 'Ubuntu', sans-serif
+// 	font-weight: 700
+// =rm
+// 	font-family: 'Roboto', sans-serif
+// 	font-weight: 500
+// =rb
+// 	font-family: 'Roboto', sans-serif
+// 	font-weight: 700
+// // =rb
+// // 	font-family: 'Roboto', sans-serif
+// // 	font-weight: 900
+// =rl
+// 	font-family: 'Roboto', sans-serif
+// 	font-weight: 300
+// =rr
+// 	font-family: 'Roboto', sans-serif
+// 	// font-weight: 400
+
+=um
+	font-family: 'ubuntum', Arial, sans-serif
+=ub
+	font-family: 'ubuntum', Arial, sans-serif
+	// font-family: 'ubuntubold', Arial, sans-serif
+=rm
+	font-family: 'Roboto-Medium-webfont', Arial, sans-serif
+=rb
+	font-family: 'Roboto-Bold-webfont', Arial, sans-serif
+	font-weight: bold
+// =rb
+// 	font-family: 'Roboto-Black-webfont', Arial, sans-serif
+=rl
+	font-family: 'Roboto-Light-webfont', Arial, sans-serif
+=rr
+	font-family: 'Roboto-Regular-webfont', Arial, sans-serif
+
+
+// colors
+$n: transparent
+$body: #f7f6f4
+$border: #e8e8e8
+$green: #7fc758
+$greenHover: #f4fbf1
+$yellow: #ffd633
+$sun: #ffdb4d
+$gray: #9a9a9a
+$light-gray: #404040
+$grayHover: #fdfdfd
+$red: #c75858
+
+// $yellow: #ffe88e
+// $sun: #ffd52f
+
+
+// #c75959 //red
+// rgba(199, 89, 89, 1.0)
+
+
+// size
+// $max-width: 320px
+
+html
+	+selection
+		background: rgba(0, 0, 0, .2)
+		color: #fff
+html,
+body
+	width: 100%
+	height: 100%
+	background-color: $body
+
+body
+	min-width: 260px
+	font-size: 13px
+	line-height: 1.53
+	background-color: $body
+	color: $light-gray
+	-webkit-font-smoothing: antialiased
+	+rl
+	font-weight: normal
+
+// test center
+%center
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		height: 2px
+		background-color: red
+		+try(-50%)
+		z-index: 20
+
+=inputsdw
+	background-color: #f7f6f4
+	box-shadow: inset 0 0 10px 2px rgba(0,0,0,0.1)
+
+
+// common blocks
+
+.out
+	position: relative
+	+clr
+	&_partner
+		min-height: 100vh
+		padding-bottom: 113px
+		+r(800)
+			padding-bottom: 145px
+.layout
+	max-width: 940px
+	width: 96%
+	margin: 0 auto
+	+r(800)
+		width: 100%
+		padding: 0 20px
+
+%gradient
+	background: #4cc594 linear-gradient(135deg,#44bf90,#5aa464)
+	// +gh(#4cc594, #5fa669)//old
+
+
+// .sdw
+// 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2)
+// 	border-radius: 8px
+// 	+r(800)
+// 		border-radius: 0
+
+.section
+	position: relative
+	padding-top: 33px
+	+clr
+	+r(800)
+		margin-left: -20px
+		margin-right: -20px
+	&.mod_krn
+		overflow: hidden
+		text-align: center
+		+r(800)
+			padding: 33px 20px 0
+	&__inner
+		padding: 28px 40px
+		background-color: #FFF
+		+clr
+		+r(800)
+			padding: 28px 20px
+		.assortment__box:last-of-type
+			.assortment__item
+				border-bottom: none
+		.expectancy__item
+			margin: 0
+		.assortment__item.mod-short
+			padding-right: 0
+		// &.mod_aside
+		// 	// flex: 0 1 310px
+		// 	width: 310px
+		// 	border-left: 1px solid $border
+		// 	+r(650)
+		// 		border: none
+	&_side
+		padding: 1px 40px 0 0
+		background-color: #FFF
+		+clr
+		+r(850)
+			padding: 1px 0 0
+		.search-top
+			margin-left: 30px
+			+r(850)
+				padding-right: 30px
+	&__strong
+		font-size: 16px
+		line-height: 1.1
+		color: $light-gray
+		text-align: left
+		+rm
+		&.mod_dotted
+			font-size: 13px
+			display: inline-block
+			margin-top: 20px
+			border-bottom: 1px dotted $light-gray
+			text-transform: uppercase
+			+ub
+	&__desc
+		font-size: 15px
+		line-height: 20px
+		color: $light-gray
+		+rr
+		strong
+			font-weight: bold
+	&__title
+		font-size: 38px
+		line-height: 1
+		color: $light-gray
+		// color: #000
+		// margin-bottom: 1em
+		+rr
+		+r(800)
+			padding-left: 20px
+		span
+			display: inline-block
+			margin-left: 30px
+			font-size: 30px
+			color: $gray
+			+rl
+		small
+			display: inline-block
+			font-size: 16px
+			color: $gray
+			margin-left: 30px
+			+rl
+		+ .section__strong
+			+r(800)
+				margin-left: 20px
+		+ .section__desc
+			+r(800)
+				margin-left: 20px
+	&__info
+		margin-top: 15px
+		&_desc
+			font-size: 20px
+			color: $gray
+			+rl
+		&_link
+			display: inline-block
+			font-size: 20px
+			color: $gray
+			border-bottom: 1px solid $gray
+			+rl
+			+tr(.4s)
+			&:hover
+				border-color: $n
+
+
+	&__details
+		img
+			float: left
+			margin: 0 20px 20px 0
+	&-logo
+		position: relative
+		width: 100%
+		height: 180px
+		img
+			+vcenter
+
+a.section__strong.mod_dotted
+	color: $red
+	border-color: $red
+	&:hover
+		border-color: $n !important
+	&.is-checked
+		color: $green
+		border-color: $green
+
+.mod_pt-0
+	padding-top: 0
+	+r(800)
+		padding-top: 0
+
+.mod_mobile
+	+r(800)
+		padding-left: 20px
+		padding-right: 20px
+
+.show-mobile
+	display: none
+	+r(650)
+		display: block
+
+.mod_mobile-wide
+	+r(800)
+		margin-left: -20px
+		margin-right: -20px
+
+.mod_last
+	margin-bottom: 40px
+
+.mod_margin-02
+	margin: 0px 0 0px
+	+r(800)
+		margin-bottom: 0px
+		padding: 35px 20px 0
+
+.mod_offsetTop30
+	margin-top: 30px
+.mod_offsetTop40
+	margin-top: 40px
+.mod_noBg
+	background-color: $n
+.mod_underline
+	padding-bottom: 1px
+	border-bottom: 1px solid $border
+
+.el-dell
+	position: relative
+	width: 200px
+	display: inline-flex
+	align-items: center
+	justify-content: flex-start
+	padding-left: 40px
+	+r(650)
+		margin-top: 20px
+	&:hover
+		span
+			text-decoration: none
+	span
+		display: inline-block
+		font-size: 15px
+		line-height: 1.1
+		color: $light-gray
+		text-decoration: underline
+		+tr(.4s)
+	.icon-remove
+		right: auto
+		left: 0
+
+.mod_fl
+	display: flex
+	+r(650)
+		flex-direction: column
+	#mapmini
+		width: 100%
+		float: none
+		margin: 0 0 10px 0
+	.order__table
+		width: 100%
+		margin-bottom: 30px
+	.order__table_row
+		display: flex
+		align-items: flex-start
+		border-bottom: 1px solid $border
+	.order__table_cell
+		width: 115px
+		margin-right: 10px
+		.order__desc
+			padding: 10px 0
+	.order__strong
+		display: inline-block
+
+a
+	text-decoration: none
+	color: $light-gray
+
+
+h1, h2, h3, h4, h5, h6
+	margin: 0 0 .8em
+	font-weight: normal
+	line-height: 1.1
+h1
+	font-size: 2em
+h2
+	font-size: 1.8em
+h3
+	font-size: 1.6em
+h4
+	font-size: 1.5em
+h5
+	font-size: 1.4em
+h6
+	font-size: 1.3em
+
+b, strong
+	font-weight: normal
+
+p
+	margin-bottom: 0
+	&.mod_last
+		margin-bottom: 40px

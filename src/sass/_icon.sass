@@ -1,0 +1,131 @@
+// Normally icon styles
+@each $s in icon-here,icon-user,icon-user-white,icon-enter,icon-remove,icon-show-map,icon-show-list,icon-time,icon-close,icon-check-bird,icon-check-close,slide-prev,icon-clock,icon-tel,icon-limit-bird,icon-arrow-left,icon-heart,icon-heart-active,icon-accii,icon-accii-active,icon-car,icon-car-green,icon-online,icon-offline,icon-metro-green,icon-metro-orange,icon-tab-bird,icon-lupa-green,icon-day-win,icon-limit-small,icon-m-green,icon-m-orange,icon-label,icon-heart-disabled,icon-heart-checked,icon-money,icon-cart,icon-target,icon-story,icon-heart-big,icon-plus-white,icon-heart-cell,icon-heart-cell-big,icon-show-list,icon-show-map,icon-recept,icon-load,icon-select-bird-disable,icon-date,icon-show-photo,icon-attr-hover,icon-pen,icon-pen-green
+	.#{$s}
+		display: inline-block
+		+s(#{$s})
+
+.icon-truck
+	display: inline-block
+	+s(icon-truck-green)
+
+.social_vk
+	display: inline-block
+	background-image: url("../img/social.png")
+	width: 30px
+	height: 30px
+	background-position: 0px 30px
+.social_f
+	display: inline-block
+	background-image: url("../img/social.png")
+	width: 30px
+	height: 30px
+	background-position: 68px 30px
+.social_you
+	display: inline-block
+	background-image: url("../img/social.png")
+	width: 30px
+	height: 30px
+	background-position: 30px 0
+
+.app-store
+	display: inline-block
+	width: 110px
+	height: 40px
+	vertical-align: top
+	background-image: url("../img/app-store.jpg")
+	margin-right: 5px
+	+tr(.4s)
+	+r(470)
+		width: 77px
+		height: 28px
+		background-image: url("../img/app-store-01.jpg")
+	&:hover
+		opacity: .8
+
+.app-play
+	display: inline-block
+	width: 118px
+	height: 40px
+	vertical-align: top
+	background-image: url("../img/app-play.jpg")
+	+tr(.4s)
+	+r(470)
+		width: 83px
+		height: 28px
+		background-image: url("../img/app-play-01.jpg")
+	&:hover
+		opacity: .8
+
+.icon-enter
+	position: absolute
+	top: 50%
+	right: 0
+	+try(-50%)
+
+.icon-remove
+	position: absolute
+	top: 50%
+	right: 38px
+	+try(-50%)
+	+tr(.4s)
+	&:hover
+		+gray
+	&.in_trash
+		height: 0
+		opacity: 0
+.icon-time,
+.icon-date
+	position: absolute
+	top: 50%
+	right: 15px
+	+try(-50%)
+	pointer-events: none
+
+[class^='icon-metro']
+	display: inline-block
+	margin-right: 10px
+
+.icon-priv
+	display: inline-block
+	width: 70px
+	height: 10px
+	background-image: url('../img/icon-priv.png')
+
+	position: absolute
+	top: 40px
+	left: -40px
+	+r(800)
+		top: -15px
+		left: 50%
+		width: 40px
+		background-position: 100% 0
+		// +trx(-50%)
+		transform: translateX(-50%) rotate(90deg)
+
+.icon-label
+	margin-right: 10px
+	vertical-align: middle
+
+.icon-money,
+.icon-cart,
+.icon-target,
+.icon-story
+	vertical-align: bottom
+	margin-right: 15px
+
+.icon-limit-bird
+	transform-origin: 50% 25%
+
+	+tr(.4s)
+
+.icon-show-map
+	vertical-align: top
+	margin-top: 3px
+
+.icon-recept
+	display: flex
+	margin-right: auto
+
+.icon-pen
+	&:hover
+		+s(icon-pen-green)

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+  <head>
+    <meta charset="utf-8">
+    <title>юТека</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="stylesheet" media="all" href="../css/style.css">
+    <script src="../js/lib/jquery.js"></script>
+    <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/init-global.js"></script>
+    <script src="../js/init-popup.js"></script>
+    <script src="../js/init-select.js"></script>
+    <script src="../js/init-map.js"></script>
+    <script src="../js/common.js"></script>
+  </head>
+
+  <body>
+    <!--BEGIN out-->
+    <div class="out">
+      <div class="layout">
+        <section class="section mod_last">
+          <h3 class="section__title">Оформление заказа<small>В наличии в 127 аптеках</small></h3>
+          <div style="display: block" class="toggler toggler-01 is_active">
+            <div id="mapPharmacy" class="mod_offsetTop mod_last"></div>
+            <div id="popapPharmacy01">
+              <p class="distance">1 200 м.</p><a href="e_apteka_opisanie.html" class="popapPharmacy__title">Аптека Фарм</a>
+              <p class="popapPharmacy__desc">г. Спб, пр-кт Просвещения, д.200<span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+              <p class="popapPharmacy__price">1 000 руб.</p>
+              <p class="popapPharmacy__strong">Вы сможете получить заказ сразу <br> после оформления</p>
+              <div class="popapPharmacy__btns"><a href="#" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div><a href="#" data-ppp="js-shemaProezda" class="popapPharmacy__link js-ppp">Схема проезда и режим работы</a>
+              <div class="popapPharmacy__check"><label class="check mod_heart"><input type="checkbox" name=""><span data-toggle-text="Убрать из моих аптек" data-start-text="В мои аптеки"> В мои аптеки</span></label></div>
+            </div>
+          </div>
+          <div class="toggler toggler-02">
+            <div class="assortment sdw mod_offsetTop pharmacy">
+              <div class="assortment__header mod_notch">
+                <div class="assortment__content">
+                  <p class="pharmacy__name">Наименование / Адрес</p>
+                  <p class="pharmacy__distance"><span class="pharmacy__distance_title">Расстояние</span></p>
+                  <p class="pharmacy__time">Режим работы</p>
+                  <p class="pharmacy__price"><span class="pharmacy__price_title">Цена</span></p>
+                </div>
+              </div>
+              <div class="assortment__box">
+                <div class="assortment__item">
+                  <div class="assortment__content">
+                    <div class="assortment__wrap">
+                      <div class="assortment__content_top">
+                        <div class="pharmacy__name"><a href="E_oformlenie_step_2.html" class="pharmacy__link">Акцент Здоровья</a></div>
+                        <div class="pharmacy__distance"><span class="pharmacy__desc">450 м</span></div>
+                        <div class="pharmacy__time"><span class="pharmacy__desc">9:00 - 22:00</span></div>
+                        <div class="pharmacy__price"><span class="pharmacy__price_desc">1 420</span></div>
+                      </div>
+                      <div class="assortment__content_bottom">
+                        <p class="pharmacy__adress">г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23</p>
+                        <p class="pharmacy__adress"><span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pharmacy__btns"><a href="E_zakaz_oformlen.html" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div>
+                </div>
+              </div>
+              <div class="assortment__box">
+                <div class="assortment__item">
+                  <div class="assortment__content">
+                    <div class="assortment__wrap">
+                      <div class="assortment__content_top">
+                        <div class="pharmacy__name"><a href="E_oformlenie_step_2.html" class="pharmacy__link">Аптека Фарм</a></div>
+                        <div class="pharmacy__distance"><span class="pharmacy__desc">500 м</span></div>
+                        <div class="pharmacy__time"><span class="pharmacy__desc">8:00 - 21:00</span></div>
+                        <div class="pharmacy__price"><span class="pharmacy__price_desc">1 380</span></div>
+                      </div>
+                      <div class="assortment__content_bottom">
+                        <p class="pharmacy__adress">г. Спб, пр-кт Просвещения, д.200</p>
+                        <p class="pharmacy__adress"><span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pharmacy__btns"><a href="E_zakaz_oformlen.html" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div>
+                </div>
+              </div>
+              <div class="assortment__box">
+                <div class="assortment__item">
+                  <div class="assortment__content">
+                    <div class="assortment__wrap">
+                      <div class="assortment__content_top">
+                        <div class="pharmacy__name"><a href="E_oformlenie_step_2.html" class="pharmacy__link">Народная аптека</a></div>
+                        <div class="pharmacy__distance"><span class="pharmacy__desc">550 м</span></div>
+                        <div class="pharmacy__time"><span class="pharmacy__desc">9:00 - 22:00</span></div>
+                        <div class="pharmacy__price"><span class="pharmacy__price_desc">1 113</span></div>
+                      </div>
+                      <div class="assortment__content_bottom">
+                        <p class="pharmacy__adress">г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23</p>
+                        <p class="pharmacy__adress"><span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pharmacy__btns"><a href="E_zakaz_oformlen.html" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div>
+                </div>
+              </div>
+              <div class="assortment__box">
+                <div class="assortment__item">
+                  <div class="assortment__content">
+                    <div class="assortment__wrap">
+                      <div class="assortment__content_top">
+                        <div class="pharmacy__name"><a href="E_oformlenie_step_2.html" class="pharmacy__link">Акцент Здоровья</a></div>
+                        <div class="pharmacy__distance"><span class="pharmacy__desc">450 м</span></div>
+                        <div class="pharmacy__time"><span class="pharmacy__desc">9:00 - 22:00</span></div>
+                        <div class="pharmacy__price"><span class="pharmacy__price_desc">1 420</span></div>
+                      </div>
+                      <div class="assortment__content_bottom">
+                        <p class="pharmacy__adress">г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23</p>
+                        <p class="pharmacy__adress"><span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pharmacy__btns"><a href="E_zakaz_oformlen.html" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div>
+                </div>
+              </div>
+              <div class="assortment__box">
+                <div class="assortment__item">
+                  <div class="assortment__content">
+                    <div class="assortment__wrap">
+                      <div class="assortment__content_top">
+                        <div class="pharmacy__name"><a href="E_oformlenie_step_2.html" class="pharmacy__link">Аптека Фарм</a></div>
+                        <div class="pharmacy__distance"><span class="pharmacy__desc">500 м</span></div>
+                        <div class="pharmacy__time"><span class="pharmacy__desc">8:00 - 21:00</span></div>
+                        <div class="pharmacy__price"><span class="pharmacy__price_desc">1 380</span></div>
+                      </div>
+                      <div class="assortment__content_bottom">
+                        <p class="pharmacy__adress">г. Спб, пр-кт Просвещения, д.200</p>
+                        <p class="pharmacy__adress"><span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pharmacy__btns"><a href="E_zakaz_oformlen.html" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div>
+                </div>
+              </div>
+              <div class="assortment__box">
+                <div class="assortment__item">
+                  <div class="assortment__content">
+                    <div class="assortment__wrap">
+                      <div class="assortment__content_top">
+                        <div class="pharmacy__name"><a href="E_oformlenie_step_2.html" class="pharmacy__link">Народная аптека</a></div>
+                        <div class="pharmacy__distance"><span class="pharmacy__desc">550 м</span></div>
+                        <div class="pharmacy__time"><span class="pharmacy__desc">9:00 - 22:00</span></div>
+                        <div class="pharmacy__price"><span class="pharmacy__price_desc">1 113</span></div>
+                      </div>
+                      <div class="assortment__content_bottom">
+                        <p class="pharmacy__adress">г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. №12,13,15-23</p>
+                        <p class="pharmacy__adress"><span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pharmacy__btns"><a href="E_zakaz_oformlen.html" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="more"><a href="#" class="more__link">Показать остальные 117 аптек</a></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!--END out-->
+  </body>
+
+</html>

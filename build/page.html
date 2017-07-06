@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+  <head>
+    <meta charset="utf-8">
+    <title>юТека</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="stylesheet" media="all" href="../css/app.css">
+    <script src="../js/lib/jquery.js"></script>
+    <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/init-global.js"></script>
+    <script src="../js/init-popup.js"></script>
+    <script src="../js/init-select.js"></script>
+    <script src="../js/init-map.js"></script>
+    <script src="../js/common.js"></script>
+  </head>
+
+  <body>
+    <!--BEGIN out-->
+    <div class="out">
+      <div class="layout">
+        <section class="section mod_last">
+          <h3 class="section__title">Оформление заказа<small>В наличии в 127 точках</small></h3>
+          <div class="retrieval sdw">
+            <form action="/" method="POST" autocomplete="off" class="retrieval__form">
+              <h5 class="title__popular">Покупатель:</h5>
+              <div class="retrieval__form_wrap">
+                <fieldset class="retrieval__fieldset"><input type="text" name="name" class="retrieval__input"><label for="name" class="retrieval__label">Имя</label></fieldset>
+                <fieldset class="retrieval__fieldset"><input type="tel" name="tel" class="retrieval__input tel_inp"><label for="tel" class="retrieval__label">Телефон</label></fieldset>
+                <fieldset class="retrieval__fieldset"><input type="email" name="email" class="retrieval__input"><label for="email" class="retrieval__label">E-mail</label></fieldset>
+              </div>
+            </form>
+            <div class="retrieval__content">
+              <p class="retrieval__desc">Ваш адрес: &nbsp;<b class="retrieval__bold">  Санкт-Петербург, ул. Граничная, д.21, кв.62</b><a href="e_apteki_nothing_found.html" data-ppp="js-adressMapPopup" class="retrieval__link js-ppp">Изменить</a></p><br></div>
+            <div>
+              <h2 class="title__popular">покликать для примера</h2><br><a href="https://twitter.com/" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a><br>
+              <br><label class="check mod_heart"><input type="checkbox" name=""><span data-toggle-text="Убрать из моих точк" data-start-text="В мои точки"> В мои точки</span></label><br>
+              <br><a href="#" data-ppp="js-shemaProezda" class="popapPharmacy__link js-ppp">Попап который проблемно вызвать с карты</a><br>
+              <br></div>
+          </div>
+          <div id="mapPharmacy" class="mod_offsetTop mod_last"></div>
+          <div id="popapPharmacy01">
+            <p class="distance">1 200 м.</p><a href="#" class="popapPharmacy__title">точка Фарм</a>
+            <p class="popapPharmacy__desc">г. Спб, пр-кт Просвещения, д.200<span class="pharmacy__metro"><i class="icon-metro-green"></i>Достоевского</span></p>
+            <p class="popapPharmacy__price">1 000 руб.</p>
+            <p class="popapPharmacy__strong">Вы сможете получить заказ сразу <br> после оформления</p>
+            <div class="popapPharmacy__btns"><a href="https://twitter.com/" class="pharmacy__getSelf js-detectUserData"><span>заберу отсюда</span></a></div><a href="#" data-ppp="js-shemaProezda" class="popapPharmacy__link js-ppp">Попап который проблемно вызвать с карты</a>
+            <div class="popapPharmacy__check"><label class="check mod_heart"><input type="checkbox" name=""><span data-toggle-text="Убрать из моих точк" data-start-text="В мои точки"> В мои точки</span></label></div>
+          </div>
+        </section>
+      </div>
+      <div class="popup">
+        <div class="popup__overlay"></div>
+        <div class="popup__window shemaPopup js-shemaProezda"><a href="#" data-close="popup" class="btn__close js-close"></a>
+          <h4 class="title__popular">Схема проезда и режим работы</h4>
+          <div class="shemaPopup__content">
+            <ul class="order__table">
+              <li class="order__table_row">
+                <div class="order__table_cell">
+                  <p class="order__desc">Сеть:</p>
+                </div>
+                <div class="order__table_cell">
+                  <p class="order__desc"><strong class="order__strong">Здоровьюшко</strong></p>
+                </div>
+              </li>
+              <li class="order__table_row">
+                <div class="order__table_cell">
+                  <p class="order__desc">Время работы:</p>
+                </div>
+                <div class="order__table_cell">
+                  <p class="order__desc"><strong class="order__strong">09:00 — 21:00</strong></p>
+                </div>
+              </li>
+              <li class="order__table_row">
+                <div class="order__table_cell">
+                  <p class="order__desc">Телефон:</p>
+                </div>
+                <div class="order__table_cell">
+                  <p class="order__desc"><strong class="order__strong">8 911 937 60 63</strong></p>
+                </div>
+              </li>
+              <li class="order__table_row">
+                <div class="order__table_cell">
+                  <p class="order__desc">Адрес:</p>
+                </div>
+                <div class="order__table_cell">
+                  <p class="order__desc"><strong class="order__strong">г. Спб, пр-кт Луначарского, д.86, корп.4, лит. А, ч. пом. №7, пом. <br> №12,13,15-23 (аптека готовых лек. форм)</strong></p>
+                </div>
+              </li>
+              <li class="order__table_row">
+                <div class="order__table_cell">
+                  <p class="order__desc">Метро:</p>
+                </div>
+                <div class="order__table_cell">
+                  <p class="order__desc"><strong class="order__strong"><i class='icon-metro-green'></i> Старая Деревня</strong></p>
+                </div>
+              </li>
+            </ul>
+            <div id="mapmini"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END out-->
+  </body>
+
+</html>
