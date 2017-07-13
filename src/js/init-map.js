@@ -74,6 +74,26 @@ $(document).ready(function() {
 				zoom: 16
 			});
 
+			map.on('popupopen', function(e) {
+				//--------------------------------------------
+				$(e.popup.getElement()).find('.js-ppp').on('click', function() {
+
+					var data = $("[data-ppp]").map(function() {
+						return '.' + $(this).data("ppp");
+					}).get().join(',').split(',');
+
+					data.forEach(function(item, i, arr) {
+						$(item).removeClass('is_active').hide();
+					});
+
+					var open = $(this).data('ppp');
+
+					$('.popup__overlay, .popup').addClass('is_active').show();
+					$('.' + open).addClass('is_active').show();
+					return false;
+				});
+			});
+
 			myIcon = DG.icon({
 				iconUrl: '../img/icon-marker.png',
 				iconSize: [55, 55]
